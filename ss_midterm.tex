@@ -1,0 +1,262 @@
+\title{Solid State Physics: Midterm Review}
+
+\documentclass[10pt]{article}
+\usepackage{amsthm}
+\usepackage{graphicx}
+\usepackage{subfig}
+\usepackage{physics}
+\graphicspath{ {figures/} }
+\begin{document}
+\maketitle
+
+\section{Drude Theory}
+\subsection{Basic Model}
+\begin{itemize}
+  \item Theory of metallic conduction proposed by Paul Drude.
+  \item Considers metal a "gas" of electrons on which the kinetic theory of gases may be applied.
+  \item Assumption of kinetic theory of gases: molecules, or electrons, are identical constituents that move
+  in straight lines until they encounter a collision.
+  \item Assumption of metallic "gases": when atoms of a metallic element form a metal, the valence (or "conduction")
+  electrons move freely while the positively charged ions remain stationary.
+  \item Reality: metals have a much higher density than gas and include very strong electron-electron and electron-ion
+  interactions.
+
+\end{itemize}
+
+The \emph{charge carrier density} $n$ may be written as
+$$
+n = \frac{N}{V} = N_{A}Z\frac{\rho}{A}
+$$
+where $N$ is the total number of conduction electrons, $V$ is the sample volume, $N_{A}$ is Avogradro's number,
+$Z$ is the number of valence electrons per atom, $\rho$ is the mass density of the metal, and $A$ is the atomic mass (mass per mole of
+the metal). A typical charge carrier density is on the order of $n ~ 10^{22} cm^{-3}$ for metals.
+
+Another useful way to characterize the charge carrier density is by specifying $r_{s}$, the radius of the spherical volume containing
+one charge carrier.
+$$
+\frac{V}{N} = \frac{1}{n} = \frac{4}{3}\pi r_{s}^{3} \rightarrow r_{s} = (\frac{3}{4\pi n})^{1/3}
+$$
+
+The basic assumption of the Drude theory are:
+\begin{itemize}
+  \item \emph{Indepedent electron approximation}: electrons do not interact with one another (between collisions).
+  \item \emph{Free electron approximation}: electrons do not interact with positively charged ions (between collisions).
+  \item Collisions are instantaneous events that abruptly alter the electron velocity. The mechanism of scattering is not
+  well-defined. Drude assumed it was only due to electron-ion scattering, but the reality is much more complicated.
+  \item Electrons experience a collision with probability $1/\tau$ per unit time. The probability of a collision in time $dt$
+  is $dt/\tau$. $\tau$ is the \emph{mean free time}, or \emph{relaxation time}.
+  \item Electrons achieve thermal equilibrium only through collision. After each collision, an electron emerges with a randomly oriented
+  velocity proportional to the local temperature $T$.
+\end{itemize}
+
+\subsection{DC Conductivity}
+Ohm's Law:
+$$V = IR$$
+where $V$ is the voltage drop, $I$ is the current, and $R$ is the resistance. Using $\rho = RA/L$, where $L$ is the
+distance over which the voltage drop occurs, and $A$ is the cross-sectional area of the sample,
+$$\textbf{E} = \rho \textbf{j} $$
+where $\textbf{j}$ is the current density - the amount of charge flowing through a unit area per unit time.
+For $n$ electrons moving with velocity $\textbf{v}$,
+$$
+\textbf{j} = nq\textbf{v} = n(-e)\textbf{v}
+$$
+\begin{itemize}
+  \item When $\textbf{E} = 0$, there is no preferred direction so $\langle \textbf{v} \rangle = 0$ and therefore $\textbf{j} = 0$.
+  \item When $\textbf{E} \neq 0$, the velocity of an electron is given by
+  $$ \textbf{v} = \textbf{v}_{0} + \frac{(-e)\textbf{E}t}{m}$$
+  So,
+  $$ \langle \textbf{v} \rangle = \langle \textbf{v}_{0} \rangle + \frac{(-e)\textbf{E}\tau}{m} = \frac{(-e)\textbf{E}\tau}{m} $$
+  Where the velocity acquired over time $t$ due to a constant acceleration of $\textbf{a} = \frac{-e\textbf{E}}{m}$ is given by $\textbf{at}$.
+\end{itemize}
+We can therefore generally write the current density as
+$$\textbf{j} = \frac{ne^{2}\tau}{m} \textbf{E}= \sigma \textbf{E} $$
+where the \emph{conductivity} $\sigma$ is given by $ne^{2}\tau/m$.
+If we consider the \emph{mean free path}, $l = \langle v\rangle \tau$, Drude's predictions for $\langle v\rangle$ based on kinetic theory
+of gases estimate $l ~ 5 $angstroms. This is consistent with Drude's view that electron-ion collisions dominated. In reality, the mean free
+path is at least an order of magnitude larger. At low temperatures, the mean free path is underestimated by a factor of $~10^{3}$.
+
+\subsection{Drude Equation of Motion}
+The time-dependent current density may be written in terms of the momentum $\textbf{p}(t)$ as
+$$\textbf{j}(t) = n(-e)\textbf{v}(t) = -\frac{ne}{m}\textbf{p}(t)$$
+At an infinitesimal time $dt$ later, the momentum will be given by
+$$\textbf{p}(t + dt) = \left ( 1 - \frac{dt}{\tau}\right ) \left [ \textbf{p}(t) + \textbf{F}dt\right ] + \left ( \frac{dt}{\tau}\right )\mathcal{O}(\textbf{F}dt)$$
+The first term comes from the fact that, with probability $1-dt/\tau$, the electron will not collide during time $dt$ and will therefore acquire the impulse $\textbf{F}dt$
+in addition to its original momentum, $\textbf{p}(t)$. The second term comes from the case that the electron does collide, which happens with probability $dt/\tau$, in
+which case its contribution to the momentum is $\mathcal{O}(\textbf{F}dt)$ since its velocity after collision averages over all directions to zero.
+Therefore,
+$$\textbf{p}(t + dt) = \textbf{p}(t) - \frac{\textbf{p}(t)dt}{\tau} + \textbf{F}dt + \mathcal{O}(dt^{2})$$
+Ignoring the higher-order terms in $dt$, we obtain:
+$$\frac{\textbf{p}(t + dt) - \textbf{p}(t)}{dt} = \frac{d\textbf{p}(t)}{dt} =  - \frac{\textbf{p}(t)}{\tau} + \textbf{F}$$
+
+\subsection{Hall Effect and Magnetoresistance}
+E.H. Hall predicted that the force experienced by a current due to a magnetic field would manifest as an observable transverse voltage, today known
+as the Hall voltage.
+The experimental setup is an applied electric field $E_{x}$ driving current in the $+\hat{x}$ direction along a sample. An applied magnetic field
+is also present, $\textbf{B} = B\hat{z}$ perpendicular to the sample. Charge carriers experience a Lorentz force given by
+$$qE_{x}\hat{x} + q(\textbf{v}\times\textbf{B})$$
+In the case of electrons, $q = -e$, and the second term gives rise to a deflection in the $-\hat{y}$ direction. As electrons build up on the sample
+surface along the $-\hat{y}$ edge, a transverse electric field $E_{y}$ is created in the $-\hat{y}$ direction. This field will grow in magnitude until is opposes
+the magnetic force term. Therefore,
+$$qE_{y}\hat{y} + q(\textbf{v}\times\textbf{B}) = 0$$
+In the case of electrons,
+$$-eE_{y} + -ev_{x}B = 0$$
+Therefore, the transverse electric field has magnitude $E_{y} = -v_{x}B$.
+
+There are two quantities of interest:
+\begin{itemize}
+  \item \emph{Magnetoresistance} $\rho(B) = \frac{E_{x}}{j_{x}}$. This quantity is field independent.
+  \item \emph{Hall coefficient} $R_{H} = \frac{E_{y}}{j_{x}B}$. This value is negative for negative charge carriers
+  and positive for positive charge carriers. Measurement of the Hall coefficient, or Hall field $E_{y}$, gives information
+  about the charge carriers.
+\end{itemize}
+
+Starting with the Drude equation of motion, we can derive equations for the magnetoresistance and Hall coefficient.
+$$\frac{d\textbf{p}(t)}{dt} =  - \frac{\textbf{p}(t)}{\tau} + \textbf{F} = \frac{\textbf{p}(t)}{\tau} + (-e\textbf{E} + \frac{-e}{m})(\textbf{p}\times\textbf{B})$$
+In the steady state, $\frac{d\textbf{p}}{dt} = 0$, so we obtain
+$$
+0 = -\frac{p_{x}}{\tau} + (-eE_{x} + \frac{-e}{m}p_{y}B) = -eE_{x} - \omega p_{y} - \frac{p_{x}}{\tau}
+$$
+$$
+0 = -\frac{p_{y}}{\tau} + (-eE_{y} - \frac{-e}{m}p_{x}B) = -eE_{y} + \omega p_{x} - \frac{p_{y}}{\tau}
+$$
+where $\omega = eB/m$, the cyclotron frequency. The quantity $\omega \tau$ is a good
+measure of the strength of the magnetic field. For example, if $\omega \tau$ is very small, the current
+is very nearly parallel to $E_{x}$.  From these we obtain
+$$
+\sigma_{0}E_{x} = \omega j_{y}\tau + j_{x}
+$$
+$$
+\sigma_{0}E_{y} = - \omega j_{x} \tau + j_{y}
+$$
+The Hall voltage is obtained in the limit when $j_{y} = 0$. Therefore, the steady state transverse field is given by
+$$E_{y} = \frac{- \omega j_{x}\tau}{\sigma_{0}} = -\frac{B}{ne}j_{x}$$
+So the Hall coefficient is given by
+$$R_{H} = \frac{E_{y}}{j_{x}B} = -\frac{1}{ne}$$
+This result predicts that the Hall coefficient is dependent only on the number of charge carriers. However, the actual value is
+temperature and field-dependent. But the limiting value, in the case of very low temperature and very high fields, is the Drude
+result.
+
+\subsection{AC Electrical Conductivity}
+We wish to calculate the current induced by a time-dependent electric field. The field can be written in the form
+$$
+\textbf{E}(t) = Re(\textbf{E}(\omega)e^{-i\omega t})
+$$
+In the absence of a magnetic field, the equation of motion becomes
+$$
+\frac{d\textbf{p}(t)}{dt} =  - \frac{\textbf{p}(t)}{\tau} + \textbf{F} = \frac{\textbf{p}(t)}{\tau} + -e\textbf{E}
+$$
+And the solution we seek is therefore of the form
+$$
+\textbf{p}(t) = Re(\textbf{p}(\omega)e^{-i\omega t})
+$$
+The equation of motion gives us
+$$
+-i\omega \textbf{p}(\omega) = -\frac{\textbf{p}(\omega)}{\tau} - e\textbf{E}(\omega)
+$$
+And we can use the fact that $\textbf{j} = -ne\textbf{p}/m$ to write
+$$
+\textbf{j}(t) = Re(\textbf{j}(\omega)e^{-i\omega t})
+$$
+and then rewrite the equation of motion as
+$$
+i\frac{m\omega}{ne}\textbf{j}(\omega) = \frac{m\textbf{j}(\omega)}{ne\tau} - e\textbf{E}(\omega)
+$$
+$$
+\left[ i\frac{m\omega}{ne} - \frac{m}{ne\tau} \right ]\textbf{j}(\omega) = - e\textbf{E}(\omega)
+$$
+$$
+\textbf{j}(\omega) = \frac{-ne^{2}}{m(i\omega - \frac{1}{\tau})}\textbf{E}(\omega)
+$$
+We finally obtain the expression for the frequency-dependent AC conductivity $\sigma(\omega)$:
+$$
+\textbf{j}(\omega) = \sigma(\omega)\textbf{E}(\omega)
+$$
+where
+$$
+\sigma(\omega) = \frac{\sigma_{0}}{1-i\omega\tau}
+$$
+In the case of $\omega = 0$, this reduces to the DC conductivity.
+There are two complications addressed in Ashcroft/Mermin:
+\begin{itemize}
+  \item Neglecting the $\textbf{B}$ counterpart: this is acceptable because the term is technically scaled
+  by a factor of $v/c$. In most cases, it is roughly $10^{-10}$ of the $\textbf{E}$-field term and may safely be ignored.
+  \item We have assumed spatial uniformity, but the $\textbf{E}$-field actually varies in time and space. However, as long as
+  the field does not vary much over a few mean free path lengths, we may safely assume spatial invariance.
+\end{itemize}
+
+\subsection{Thermal Conductivity}
+The Wiedemann-Franz law states that the ratio of the thermal to the electrical conductance, $\kappa / \sigma$, is
+directly proportional to the temperature.
+
+The Drude model assumes the bulk of thermal conductance is performed by conduction electrons.
+
+\section{Sommerfeld Theory}
+Sommerfeld combined Fermi-Dirac statistics with the Drude model.
+\subsection{Basic Fermi-Dirac Statistics}
+Given a system of free electrons with chemical potential $\mu$, the probability of an eigenstate of energy $E$ bring occupied is given by the
+Fermi factor
+$$n_{F}(\beta(E-\mu)) = \frac{1}{e^{\beta(E - \mu)}+1}$$
+At very low temperature, $n_{F} \approx 1$ for $E < \mu$ and $n_{F} \approx 0$ for $E > \mu$. So, $n_{F}$ is a step function
+at low $T$. At higher $T$, it becomes more spread out.
+
+For electrons in a box of size $V = L^{3}$, the wavefunctions of the free electron particles are given by
+$$\Psi = e^{i\textbf{k}\cdot\textbf{r}}$$
+Imposing PBC, we find that $\textbf{k} = (2\pi/L)(n_{1},n_{2},n_{3})$ where $n_{i}$ are integers. The corresponding
+energies of the plane waves are
+$$\epsilon(\textbf{k}) = \frac{\hbar |\textbf{k}|^{2}}{2m}$$
+The total number of electrons in the system, $N$, is given by the sum of all possible states times the probability of each state being occupied.
+Therefore,
+
+$$N = 2 \sum_{\textbf{k}}n_{F}(\beta(\epsilon(\textbf{k}) - \mu))$$
+
+where the factor of 2 comes from each state allowing two possible spin configurations. In the continuous limit, we can make
+use of the following:
+
+$$\int f(x)dx = \sum f(x)\delta x$$
+
+Therefore, $N$ can be written
+
+$$
+N = 2 \frac{L^{3}}{(2\pi)^{3}}\int d\textbf{k} n_{F}(\beta(\epsilon(\textbf{k}) - \mu))
+$$
+
+Some definitions:
+\begin{itemize}
+  \item The \emph{Fermi energy}, $E_{F}$, is the chemical potential at $T = 0$. Sometimes also called the \emph{Fermi Level}.
+  In the case of a continuum of states, the Fermi energy is the energy of the most energetic occupied electron state. In the case of a discrete
+  set of states, the Fermi energy is the energy halfway between the highest occupied and lowest unoccupied states.
+  \item The \emph{Fermi sea} is the set of states filled at $T = 0$.
+  \item The \emph{Fermi temperature}, $T_{F}$, is given by $T_{F} = E_{F}/k_{B}$.
+  \item The \emph{Fermi wavevector}, $k_{F}$, satisfies
+  $$E_{F} = \frac{\hbar^{2}k_{F}^{2}}{2m}$$
+  \item The \emph{Fermi momentum} $p_{F} = \hbar k_{F}$.
+  \item The \emph{Fermi velocity} $v_{F} = p_{F}/m = \hbar k_{F}/m$.
+\end{itemize}
+
+\subsection{Fermi Energy at T = 0}
+Consider a 3-dimensional metal with $N$ electrons at $T = 0$. The total number of electrons can be written as
+
+$$
+N = 2 \frac{L^{3}}{(2\pi)^{3}}\int d\textbf{k} n_{F}(\beta(\epsilon(\textbf{k}) - \mu))
+$$
+
+At $T = 0$, the Fermi function $n_{F}$ becomes a step function that switches at $E_{F}$ such that
+
+$$n_{F} = \Theta(E_{F} - \epsilon(\textbf{k}))$$
+
+Therefore,
+
+$$
+N = 2 \frac{L^{3}}{(2\pi)^{3}}\int d\textbf{k} \Theta(E_{F} - \epsilon(\textbf{k})) = 2 \frac{L^{3}}{(2\pi)^{3}} \int^{|k|<k_{F}}d\textbf{k}
+$$
+
+The final integral simply yields the volume of a ball of radius $k_{F}$. Therefore,
+
+$$N = 2 \frac{L^{3}}{(2\pi)^{3}} \left (\frac{4}{3}\pi k_{F}^3\right )$$
+
+The surface of this ball is known as the \emph{Fermi surface} - it is the surface dividing filled from unfilled states at $T = 0$.
+
+This result gives us equations for the Fermi wavevector and Fermi energy:
+$$$$
+
+\end{document}
