@@ -257,6 +257,68 @@ $$N = 2 \frac{L^{3}}{(2\pi)^{3}} \left (\frac{4}{3}\pi k_{F}^3\right )$$
 The surface of this ball is known as the \emph{Fermi surface} - it is the surface dividing filled from unfilled states at $T = 0$.
 
 This result gives us equations for the Fermi wavevector and Fermi energy:
-$$$$
+$$
+k_{F} = \left ( \frac{3}{4\pi}\frac{(2\pi)^{3} N}{2L^{3}}\right )^{1/3} = (3\pi^{2}n)^{1/3}
+$$
+$$
+E_{F} = \frac{\hbar^{2}k_{F}^{2}}{2m} = \frac{\hbar^{2}(3\pi^{2}n)^{2/3}}{2m}
+$$
+For a typical metal, we can estimate the number of free electrons, and therefore calculate the Fermi energy. The Fermi energies and corresponding
+Fermi temperatures are extremely large ($~7$ eV, $80000$K for copper). This indicates that only electrons that are very close to the Fermi surface
+have any hope of receiving enough energy to exceed the Fermi energy. All other electrons would require an insane amount of energy to move, as no unoccupied states are nearby.
+
+
+\subsection{Heat Capacity}
+The heat capacity $C$ is given generally by
+$$C = \frac{\partial E}{\partial T}$$
+
+To calculate the heat capacity, we need an equation for the total energy of the system. The expectation value
+of the total energy of the system is given by
+
+$$
+E_{total} = 2\frac{L^{3}}{(2\pi)^{3}}\int d\textbf{k} \epsilon(\textbf{k})n_{F}(\beta(\epsilon(\textbf{k}) - \mu))
+$$
+Integrating out the $theta$ and $phi$ contributions, we obtain the one-dimensional integral
+$$
+E_{total} = 2\frac{L^{3}}{(2\pi)^{3}}\int 4\pi k^{2} dk \epsilon(\textbf{k})n_{F}(\beta(\epsilon(\textbf{k}) - \mu))
+$$
+Using the relationships
+$$
+k = \sqrt{\frac{2\epsilon m}{\hbar^{2}}}
+$$
+$$
+dk = \sqrt{\frac{m}{2\epsilon \hbar^{2}}}d\epsilon
+$$
+The total energy may be written as
+$$
+E_{total} = (L^{3}) \int_{0}^{\infty} \epsilon  g(\epsilon)  n_{F}(\beta(\epsilon-\mu))d\epsilon
+$$
+where $g(\epsilon)d\epsilon$ is the \emph{density of states per unit volume} - the total number of eigenstates with energies between $\epsilon$
+and $\epsilon + d\epsilon$.
+$$g(\epsilon)d\epsilon = \frac{2}{(2\pi)^{3}}4\pi k^{2}dk = \frac{(2m)^{3/2}}{2\pi^{2}\hbar^{3}}\epsilon^{1/2}d\epsilon$$
+Using the expression for the Fermi energy for a 3D metal at $T=0$, we can further write
+$$
+g(\epsilon) = \frac{3n}{2E_{F}} \left (\frac{\epsilon}{E_{F}} \right)^{1/2}
+$$
+
+Once the chemical potential is fixed by the number of electrons in the system, the total energy may be calculated
+as above. The partial derivative with respect to temperature will yield the heat capacity.
+
+When $T = 0$, the Fermi function is a step function and the chemical potential is simply $\mu = E_{F}$.
+For non-zero, but low, temperature the chemical potential is given by
+$$\mu = E_{F} + \mathcal{O}(T/T_{F})^{2}$$
+
+Let $E[T=0]$ be the kinetic energy of the system at $T=0$. For a finite temperature, the spread of the step function is roughly $\approx k_{B}T$.
+That is, only electrons within a range of $k_{B}T$ of $\mu$ can be excited and they are excited within a range $k_{B}T$ above $\mu$.
+The energy is then given by
+$$E[T] \approx E[T=0] + \frac{\alpha}{2}[Vg(E_{F})k_{B}T](k_{B}T) = E[T=0] + \frac{\alpha}{2}D(E_{F})(k_{B}T)^{2}$$
+Therefore,
+$$
+C = \frac{\partial E}{\partial T} = \alpha D(E_{F})k_{B}^{2}T
+$$
+Using
+$$Vg(\epsilon) = D(\epsilon) = \frac{3N}{2E_{F}}\left ( \frac{\epsilon}{E_{F}}\right )^{1/2}$$
+
+
 
 \end{document}
