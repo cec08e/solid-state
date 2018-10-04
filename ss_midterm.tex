@@ -509,13 +509,60 @@ Since $H_{y}$ is simply the Hamiltonian of a free particle, we can see that the 
 $$
 \psi(x,y) = e^{ik_{y}y}\psi_{x}(x)
 $$
-Acting on this solution with the Hamiltonian will replace $p_{y}$ with $\hbar k_{y}$
+Acting on this solution with the Hamiltonian will replace $p_{y}$ with $\hbar k_{y}$ so we obtain
+$$
+H = \frac{1}{2m}\left ( p_{x}^{2} + (\hbar k_{y} + exB)^{2}\right ) = \frac{p_{x}^{2}}{2m} + \frac{1}{2m}(eB)^{2}(\frac{\hbar k_{y}}{eB} + x)^{2}  )
+$$
+
+This is simply the Hamiltonian of a harmonic oscillator with frequency $\omega = (eB/m)$ where the zero of potential has been shifted to $x = -\hbar k_{y}/eB$. Shifting the zero of
+potential does not disturb the energy spectrum. Therefore, the eigenenergies are given by
+$$
+E_{\nu} = \hbar \omega(\nu + \frac{1}{2})
+$$
+and that means that $\psi_{x}(x)$ must be the eigenfunctions satisfying the 1D harmonic oscillator.
+
+An important observation is that the wavefunctions depend on two numbers: $k_{y} and \nu$, but the eigenvalues depend only on $\nu$.
+
+Let us impose the volume restriction of $L_{x}$ and $L_{y}$. The restriction on the $\hat{y}$-direction indicates that $k_{y}$ is
+quantized such that
+$$
+k_{y} = \frac{2\pi n}{L}
+$$
+The restriction on $\hat{x}$ indicates that the center of the potential cannot fall outside of this range. Therefore,
+
+$$
+0 \leq \hbar k_{y}{eB} \leq L_{x}
+$$
+
+Therefore,
+$$
+0 \leq k_{y} \leq L_{x}eB/\hbar
+$$
+
+And the total number of states is given by
+$$
+\mathcal{N} = \frac{L_{y}}{2\pi} \int_{0}^{L_{x}eB/\hbar} dk_{y} =  \frac{L_{y}L_{x}eB}{2\pi\hbar}
+$$
+
+This is the degeneracy of each Landau level. Now, let
+
+$$
+\mathcal{N} = \frac{L_{x}L_{y}B}{\Phi_{0}}
+$$
+
+where the \emph{quantum of flux} $\Phi_{0} = \frac{2\pi\hbar}{e}$
 \subsection{Quantum Hall Effect}
 
 At low temperatures and strong magnetic fields, quantum hall effects dominate. There are two flavors:
 \begin{itemize}
   \item Integer QHE (von Klitzing paper):
-  \item Fractional QHE:
+  \item Fractional QHE
+\end{itemize}
+
+\subsubsection{Integer Quantum Hall Effect}
+The integer quantum Hall effect is characterized by the following features:
+\begin{itemize}
+  \item
 \end{itemize}
 
 \end{document}
