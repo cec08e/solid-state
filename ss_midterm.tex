@@ -319,6 +319,46 @@ $$
 Using
 $$Vg(\epsilon) = D(\epsilon) = \frac{3N}{2E_{F}}\left ( \frac{\epsilon}{E_{F}}\right )^{1/2}$$
 
+\subsection{Density of States}
 
+\subsubsection{Method 1}
+The density of states $D(\epsilon)$ can be calculated from the following expression for the total energy
+$$
+E_{total} = \int \epsilon D(\epsilon) n_{F}(\beta(\epsilon - \mu)) d\epsilon
+$$
+In one dimension, the expectation value of the total energy is
+$$E_{total} = 2\frac{L}{2\pi}\int d\textbf{k} \epsilon(\textbf{k}) n_{F}(\beta(\epsilon - \mu))  $$
+We now make use of
+
+$$
+k = \sqrt{\frac{2m\epsilon}{\hbar^{2}}}
+$$
+$$
+\frac{dk}{d\epsilon} = \frac{1}{2}\left ( \frac{2m\epsilon}{\hbar^{2}}\right )^{-1/2} \frac{2m}{\hbar^{2}} = \sqrt{\frac{m}{2\hbar^{2}\epsilon}}
+$$
+to obtain the following integral over $d\epsilon$
+
+$$E_{total} = 2\frac{L}{2\pi}\int \sqrt{\frac{m}{2\hbar^{2}\epsilon}}\epsilon(\textbf{k}) n_{F}(\beta(\epsilon - \mu))  d\epsilon $$
+
+Therefore,
+
+$$D(\epsilon) = \frac{L}{\pi} \sqrt{\frac{m}{2\hbar^{2}\epsilon}}$$
+
+Likewise, for two dimensions:
+
+$$D(\epsilon) = \frac{L^{2}m}{\pi \hbar^{2}}$$
+
+and for three dimensions:
+
+$$D(\epsilon) = \frac{(2m)^{3/2}L^{3}}{2\pi^{2}\hbar^{3}}\epsilon^{1/2}$$
+
+\subsubsection{Method 2}
+To derive the same result for $D(\epsilon)$, we may first consider the total number of states $\mathcal{N}$ where, for $3$ dimensions,
+$$\mathcal{N} = 2 \left (\frac{1}{\delta k}\right)^{3}\left (\frac{4\pi k^{3}}{3}\right ) = 2 \left ( \frac{L}{2\pi} \right)^{3} \left (\frac{4\pi (2m\epsilon)^{3/2}}{3\hbar^{3}} \right ) = \frac{L^{3}}{3\pi^{2}}\frac{(2m\epsilon)^{3/2}}{\hbar^{3}}$$
+The density of states $D(\epsilon)$ is then given by
+
+$$
+D(\epsilon) = \frac{\partial \mathcal{N}}{\partial \epsilon} = \frac{L^{3}}{2\pi^{2}}\frac{(2m)^{3/2}(\epsilon)^{1/2}}{\hbar^{3}}
+$$
 
 \end{document}
