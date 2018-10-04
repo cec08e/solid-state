@@ -190,6 +190,20 @@ directly proportional to the temperature.
 
 The Drude model assumes the bulk of thermal conductance is performed by conduction electrons.
 
+\subsection{Drude Theory Failures and Successes}
+\begin{itemize}
+  \item Drude theory fails to treat electrons using Fermi statistics.
+  \item Overestimates the heat capacity.
+  \item Underestimates the velocity of the electrons.
+  \item Drude is successful in describing transport properties like conductivity and the Hall coefficient because
+  these do not rely on velocity or specific heat.
+  \item The Drude equation of motion can be thought of as the equation of motion for the Fermi sea. In the absence of a field, the
+  average vector velocity of the Fermi sea is zero. But a net force shift induces a non-zero average vector velocity, known as the
+  \emph{drift velocity} - this shifts the Fermi sea from the origin. The scattering process attempts to shift the Fermi sea back to the
+  origin and lower the energy of the Fermi sea. The shifting happens around the Fermi surface only - electrons that are in states higher
+  than the original Fermi surface will scatter to the other side of the Fermi sphere in order to lower the energy.
+\end{itemize}
+
 \section{Sommerfeld Theory}
 Sommerfeld combined Fermi-Dirac statistics with the Drude model.
 \subsection{Basic Fermi-Dirac Statistics}
@@ -318,6 +332,11 @@ C = \frac{\partial E}{\partial T} = \alpha D(E_{F})k_{B}^{2}T
 $$
 Using
 $$Vg(\epsilon) = D(\epsilon) = \frac{3N}{2E_{F}}\left ( \frac{\epsilon}{E_{F}}\right )^{1/2}$$
+we obtain for the heat capacity
+
+$$
+C = \alpha \frac{3NT}{2T_{F}}
+$$
 
 \subsection{Density of States}
 
@@ -360,5 +379,131 @@ The density of states $D(\epsilon)$ is then given by
 $$
 D(\epsilon) = \frac{\partial \mathcal{N}}{\partial \epsilon} = \frac{L^{3}}{2\pi^{2}}\frac{(2m)^{3/2}(\epsilon)^{1/2}}{\hbar^{3}}
 $$
+
+\subsection{Magnetic Spin Susceptibility - Pauli Paramagnetism}
+The Hamiltonian including the Zeeman interaction term is given by
+$$
+H = \frac{\textbf{p}^{2}}{2m} + g\mu_{B}\textbf{B}\cdot\sigma
+$$
+The energies of the two spin configurations are therefore
+$$
+\epsilon(\textbf{k}, \uparrow) = \frac{\hbar^{2}|\textbf{k}|^{2}}{2m} + \mu_{B}B
+$$
+$$
+\epsilon(\textbf{k}, \downarrow) = \frac{\hbar^{2}|\textbf{k}|^{2}}{2m} - \mu_{B}B
+$$
+The expectation value of the energy for a single spin is given by
+$$E = \frac{1}{Z}\left [ \epsilon(\uparrow)e^{-\beta \epsilon(\uparrow)} + \epsilon(\downarrow)e^{-\beta \epsilon(\downarrow)}\right ]$$
+
+or we could make use of the free energy definition
+$$F = \frac{-1}{\beta}\ln Z$$
+
+Either way, the spin magnetization (the moment per unit volume) is given by
+
+$$
+M = -\frac{1}{V}\frac{\partial E}{\partial B} = -\frac{1}{V}\frac{\partial}{\partial B}\left [ -\frac{1}{\beta}\ln Z\right ]
+$$
+After a few steps, we obtain
+$$
+M = \frac{N\mu_{B}}{VZ}\left [  -e^{-\mu_{B}B\beta} + e^{\mu_{B}B\beta}\right ] = \frac{\mu_{B}}{V}[(\# \downarrow) - (\# \uparrow)]
+$$
+
+It is energetically favorable for the spins to be pointing down, so the higher number of down spins results in a magnetization developing in the same direction
+as the applied field. This process is known as \emph{Pauli paramagnetism}, where the Pauli name indicates the spin magnetization of the
+free electron gas.
+
+When $B = 0$, the density of states $g_{\uparrow}(\epsilon)$ and $g_{\downarrow}(\epsilon)$ are the same. That is
+$$
+g_{\uparrow}(\epsilon) = g_{\downarrow}(\epsilon) = g(\epsilon)/2 \propto \epsilon^{1/2}
+$$
+
+When $B \neq 0$, the densities of states $g_{\uparrow}(\epsilon)$ and $g_{\downarrow}(\epsilon)$ are shifted to the right and left
+respectively by $\mu_{B}B$. The $\uparrow$ states are pushed above the Fermi level, but they may lower their energy by flipping. The number of spins that
+flip is given roughly by $g_{\uparrow}(E_{F})\mu_{B}B$. This argument is applicable because the number of electrons in the system does not change (and neither does
+the temperature), and therefore neither does the chemical potential $\mu = E_{F}$.
+
+Given this approximation for the number of flipped spins, the magnetization is therefore given by
+
+$$
+M = \mu_{B}[2g_{\uparrow}(E_{F})\mu_{B}B] = g(E_{F})\mu_{B}^{2}B
+$$
+
+Furthermore, the magnetic susceptibility is given by
+$$
+\chi = \lim_{H \rightarrow 0}\frac{\partial M}{\partial H}
+$$
+where $H = B/\mu_{0}$. So,
+$$
+\chi_{Pauli} = \frac{dM}{dH} = \mu_{0}\frac{dM}{dB} = \mu_{0}\mu_{B}^{2}g(E_{F})
+$$
+
+
+\subsubsection{Sommerfeld failures}
+\begin{itemize}
+  \item The mean free path is quite long - $l \approx 10^{2}$ angstroms. How do electrons avoid scattering from the ions in-between?
+  \item To what degree do core electrons not "count" in calculating Fermi energies and velocities? What about insulators which have no free
+  electrons?
+  \item Why does the Hall coefficient change sign based on charge carrier?
+  \item The features of the optical spectra of metals are not explained at all.
+  \item The measure specific heat of metals is still off in some cases (and, to the same degree, so are measurements of
+  mass of electrons in these metals).
+  \item Why are some metals magnetic without an applied external field?
+  \item What about the effect of the ignored electron-electron interactions?
+\end{itemize}
+
+\section{Quantum Hall Effect and Landau Quantization}
+See: http://www.damtp.cam.ac.uk/user/tong/qhe/qhe.pdf
+\subsection{Landau Levels}
+In this section, we will review the behavior of free particles moving in a magnetic field and the resulting phenomenon of
+Landau levels. First a note about spin: we can neglect spin consideration mostly because in the large field limit, the energy required to flip a
+spin becomes very large. So, for low energy systems, the electrons behave as if they are spinless.
+
+The quantum Hamiltonian in the presence of a magnetic field $\textbf{B} = \nabla \times \textbf{A}$ is
+$$
+H = \frac{1}{2m}(\textbf{p} + e\textbf{A})^{2}
+$$
+where the mechanical momentum is $\textbf{p} = -i\hbar\nabla$.
+
+Note: this result may be obtained by writing down the classical Lagrangian
+
+$$ L = \frac{1}{2}m\dot{\textbf{x}}^{2} - (-e(\dot{\textbf{x}} \times \textbf{B})) = \frac{1}{2}m\dot{\textbf{x}}^{2} + e(\dot{\textbf{x}} \cdot \textbf{A})$$ ?? Why?
+The canonical momentum is therefore
+$$
+\frac{\partial L}{\partial \dot{\textbf{x}}} = m\dot{\textbf{x}} - e\textbf{A}
+$$
+and the Hamiltonian is given by
+$$
+H = \dot{\textbf{x}}\frac{\partial L}{\partial \dot{\textbf{x}}} - L
+$$
+
+If we let $\textbf{P} = \textbf{p} + e\textbf{A}$, then
+$$
+H = \frac{1}{2m}(\textbf{P})^{2}
+$$
+and $[P_{i}, P_{j}] = -ie\hbar B$ for $i \neq j$. Now, if we define
+$$
+a, a^{\dagger} = \frac{1}{\sqrt{2e\hbar B}}(P_{x} \pm i P_{y})
+$$
+Then,
+$$
+H = \hbar \frac{eB}{m}\left (a^{\dagger}a + \frac{1}{2} \right) = \hbar \omega_{B}\left(a^{\dagger}a + \frac{1}{2}\right )
+$$
+where $\omega_{B}$ is the cyclotron frequency. The well-known result is that the eigenstates $\ket{n}$ have
+energies
+$$E_{n} = \hbar \omega_{b} \left(n + \frac{1}{2}\right)$$
+where each energy level is known as a \emph{Landau level}.
+
+\subsection{The Landau Gauge}
+See Landau levels problem, homework 2.
+
+In the Landau gauge, $\textbf{A} = Bx\hat{y}$.
+
+\subsection{Quantum Hall Effect}
+
+At low temperatures and strong magnetic fields, quantum hall effects dominate. There are two flavors:
+\begin{itemize}
+  \item Integer QHE (von Klitzing paper):
+  \item Fractional QHE:
+\end{itemize}
 
 \end{document}
