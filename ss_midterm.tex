@@ -595,22 +595,24 @@ $$\textbf{z}' = \epsilon_{zx}\hat{x} + \epsilon_{zy}\hat{y} + (1+\epsilon_{zz})\
 The displacement $\textbf{R}$ of the deformation is defined by
 $$\textbf{R} = \textbf{r}' - \textbf{r} = x(\textbf{x}' - \hat{x}) + y(\textbf{y}' - \hat{y}) +z(\textbf{z}' - \hat{z})$$
 More explicitly,
-\begin{multline}
-  \textbf{R} = (x\epsilon_{xx} + y\epsilon_{yx} + z\epsilon_{zx})\hat{x} \\
-              + (x\epsilon_{xy} + y\epsilon_{yy} + z\epsilon_{zy})\hat{y} \\
-              + (x\epsilon_{xz} + y\epsilon_{yz} + z\epsilon_{zz})\hat{z}
-\end{multline}
+\begin{equation}
+\begin{aligned}
+  \textbf{R} = & (x\epsilon_{xx} + y\epsilon_{yx} + z\epsilon_{zx})\hat{x} \\
+               & + (x\epsilon_{xy} + y\epsilon_{yy} + z\epsilon_{zy})\hat{y} \\
+               & + (x\epsilon_{xz} + y\epsilon_{yz} + z\epsilon_{zz})\hat{z}
+\end{aligned}
+\end{equation}
 Which can be written as
 
 $$\textbf{R}(\textbf{r}) = u(\textbf{r})\hat{x} + v(\textbf{r})\hat{y} + w(\textbf{r})\hat{z}$$
 
 It is usual to work with the following components to define the \emph{strain}:
-$$e_{xx} \equiv \epsilon_{xx} = \frac{\partial u}{\partial x}$$
-$$e_{yy} \equiv \epsilon_{yy} = \frac{\partial v}{\partial y}$$
-$$e_{zz} \equiv \epsilon_{zz} = \frac{\partial w}{\partial z}$$
-$$e_{xy} \equiv \epsilon_{yx} + \epsilon_{xy} = \frac{\partial u}{\partial y} + \frac{\partial v}{\partial x}$$
-$$e_{yz} \equiv \epsilon_{zy} + \epsilon_{yz} = \frac{\partial v}{\partial z} + \frac{\partial w}{\partial y}$$
-$$e_{zx} \equiv \epsilon_{zx} + \epsilon_{xz} = \frac{\partial u}{\partial z} + \frac{\partial w}{\partial x}$$
+$$e_{1} = e_{xx} \equiv \epsilon_{xx} = \frac{\partial u}{\partial x}$$
+$$e_{2} = e_{yy} \equiv \epsilon_{yy} = \frac{\partial v}{\partial y}$$
+$$e_{3} = e_{zz} \equiv \epsilon_{zz} = \frac{\partial w}{\partial z}$$
+$$e_{4} = e_{xy} \equiv \epsilon_{yx} + \epsilon_{xy} = \frac{\partial u}{\partial y} + \frac{\partial v}{\partial x}$$
+$$e_{5} = e_{yz} \equiv \epsilon_{zy} + \epsilon_{yz} = \frac{\partial v}{\partial z} + \frac{\partial w}{\partial y}$$
+$$e_{6} = e_{zx} \equiv \epsilon_{zx} + \epsilon_{xz} = \frac{\partial u}{\partial z} + \frac{\partial w}{\partial x}$$
 where the equalities only hold for small strains (neglecting $\mathcal{O}(\epsilon^{2})$).
 
 The \emph{dilation} is the fractional increase of volume associated with a deformation and is given by
@@ -624,8 +626,30 @@ direction. Note: if a body is in static equilibrium (or simply not rotating), th
 Therefore, $\sigma_{ij} = \sigma_{ji}$ and there are only six, instead of nine, independent stress components.
 
 \begin{itemize}
-  \item The dimensions of stress are force per unit area.
-  \item Strain is dimensionless. 
+  \item The dimensions of stress are force per unit area, or energy per unit volume.
+  \item Strain is dimensionless.
 \end{itemize}
+
+Hooke's law states that for small deformations, the strain is directly proportional to the stress.
+\begin{itemize}
+  \item The \emph{elastic compliance constants} \textbf{S} (a $6\times6$ matrix) satisfy
+  $\textbf{e} = \textbf{S}$\textbf{$\sigma$}
+  \item The \emph{elastic stiffness constants} \textbf{C}  (a $6\times6$ matrix) satisfy
+  \textbf{$\sigma$} $ = \textbf{C}\textbf{e}$
+  \item The elastic stiffness constants are symmetrical: $C_{\alpha\beta} = C_{\beta\alpha}$
+\end{itemize}
+
+The \emph{elastic energy density } $U$ is given by
+$$
+U = \frac{1}{2}\sum_{\lambda = 1}^{6}\sum_{\mu = 1}^{6}\tilde{C}_{\lambda\mu}e_{\lambda}e_{\mu}
+$$
+where $\tilde{C} = C$? The stress components $\sigma_{ij}$ are found by taking the derivative of $U$ with the
+associated strain component. For example,
+
+$$\sigma_{xx} = \frac{\partial U}{\partial e_{xx}} = \frac{\partial U}{\partial e_{1}}$$
+
+For a cubic crystal, symmetry allows
+
+
 
 \end{document}
