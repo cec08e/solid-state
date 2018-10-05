@@ -34,7 +34,7 @@ the metal). A typical charge carrier density is on the order of $n ~ 10^{22} cm^
 Another useful way to characterize the charge carrier density is by specifying $r_{s}$, the radius of the spherical volume containing
 one charge carrier.
 $$
-\frac{V}{N} = \frac{1}{n} = \frac{4}{3}\pi r_{s}^{3} \rightarrow r_{s} = (\frac{3}{4\pi n})^{1/3}
+\frac{V}{N} = \frac{1}{n} = \frac{4}{3}\pi r_{s}^{3} \rightarrow r_{s} = \left (\frac{3}{4\pi n}\right )^{1/3}
 $$
 
 The basic assumption of the Drude theory are:
@@ -72,7 +72,7 @@ We can therefore generally write the current density as
 $$\textbf{j} = \frac{ne^{2}\tau}{m} \textbf{E}= \sigma \textbf{E} $$
 where the \emph{conductivity} $\sigma$ is given by $ne^{2}\tau/m$.
 If we consider the \emph{mean free path}, $l = \langle v\rangle \tau$, Drude's predictions for $\langle v\rangle$ based on kinetic theory
-of gases estimate $l ~ 5 $angstroms. This is consistent with Drude's view that electron-ion collisions dominated. In reality, the mean free
+of gases estimate $l \approx 5 $angstroms. This is consistent with Drude's view that electron-ion collisions dominated. In reality, the mean free
 path is at least an order of magnitude larger. At low temperatures, the mean free path is underestimated by a factor of $~10^{3}$.
 
 \subsection{Drude Equation of Motion}
@@ -111,7 +111,7 @@ There are two quantities of interest:
 \end{itemize}
 
 Starting with the Drude equation of motion, we can derive equations for the magnetoresistance and Hall coefficient.
-$$\frac{d\textbf{p}(t)}{dt} =  - \frac{\textbf{p}(t)}{\tau} + \textbf{F} = \frac{\textbf{p}(t)}{\tau} + (-e\textbf{E} + \frac{-e}{m})(\textbf{p}\times\textbf{B})$$
+$$\frac{d\textbf{p}(t)}{dt} =  - \frac{\textbf{p}(t)}{\tau} + \textbf{F} = \frac{\textbf{p}(t)}{\tau} + \left (-e\textbf{E} + \frac{-e}{m}\right)(\textbf{p}\times\textbf{B})$$
 In the steady state, $\frac{d\textbf{p}}{dt} = 0$, so we obtain
 $$
 0 = -\frac{p_{x}}{\tau} + (-eE_{x} + \frac{-e}{m}p_{y}B) = -eE_{x} - \omega p_{y} - \frac{p_{x}}{\tau}
@@ -188,7 +188,14 @@ There are two complications addressed in Ashcroft/Mermin:
 The Wiedemann-Franz law states that the ratio of the thermal to the electrical conductance, $\kappa / \sigma$, is
 directly proportional to the temperature.
 
-The Drude model assumes the bulk of thermal conductance is performed by conduction electrons.
+The Drude model assumes the bulk of thermal conductance is performed by conduction electrons. To define and describe thermal conductance, consider a metal bar
+along which a temperature gradient $\nabla T$ exists in the $\hat{x}$ direction. By supplying a heat source on the hot end, one can produce a uniform flow of thermal
+energy that flows opposite to the sense of the thermal gradient. Let the \emph{thermal current density} $\textbf{j}^{q}$ be a vector parallel to the direction of heat flow,
+whose magnitude gives the thermal energy per unit time crossing a unit cross-sectional area. Fourier's Law gives us
+
+$$\textbf{j}^{q} = -\kappa \nabla T$$
+
+where the proportionality constant $\kappa$ is the thermal conductivity and is positive since $\textbf{j}^{q}$ flows opposite $\nabla T$.
 
 \subsection{Drude Theory Failures and Successes}
 \begin{itemize}
@@ -649,7 +656,68 @@ associated strain component. For example,
 $$\sigma_{xx} = \frac{\partial U}{\partial e_{xx}} = \frac{\partial U}{\partial e_{1}}$$
 
 For a cubic crystal, symmetry allows
+$$
+\begin{bmatrix}
+C_{11} & C_{12}  & C_{12} & 0  & 0 & 0\\
+C_{12} & C_{11} & C_{12} & 0 & 0 & 0\\
+C_{12} & C_{12} & C_{11} & 0 &  0& 0\\
+0 & 0 & 0 & C_{44} & 0 & 0\\
+0 &  0&  0&  0&  C_{44}& 0\\
+0 &0  &  0& 0 &0  & C_{44}
+\end{bmatrix}
+$$
+\begin{itemize}
+  \item The \emph{bulk modulus} $B$ is defined by the relation
+  $$U = \frac{1}{2}B\delta^{2}$$
+  for a uniform dilation $e_{xx} = e_{yy} = e_{zz} = \frac{1}{3}\delta$.
+  \item The \emph{compressibility } K is defined by
+  $$K = \frac{1}{B}$$
+\end{itemize}
 
+\subsection{Elastic Waves}
+The net x-component of the force on a cubic crystal of volume $\Delta x \Delta y \Delta z$, and mass $\rho \Delta x \Delta y \Delta z $ is given by
 
+$$
+F_{x} = \left ( \frac{\partial \sigma_{xx}}{\partial x} + \frac{\partial \sigma_{xy}}{\partial y} + \frac{\partial \sigma_{xz}}{\partial z} \right)\Delta x \Delta y \Delta z
+$$
 
+The equation of motion in the x-direction is therefore
+$$\rho \ddot{u} = \left ( \frac{\partial \sigma_{xx}}{\partial x} + \frac{\partial \sigma_{xy}}{\partial y} + \frac{\partial \sigma_{xz}}{\partial z} \right)$$
+and similar equations follow for $v$ and $w$.
+
+\subsection{Waves in [100]}
+\subsubsection{Longitudinal}
+Consider a longitudinal wave given by
+$$ u = u_{0}e^{i(kx - \omega t)}$$
+
+where the wavevector and the particle motion are both along the $x$ cube edge. The wavevector is given by $k = \frac{2\pi}{\lambda}$ and $\omega = 2\pi\nu$ is the
+angular frequency. The velocity of the longitudinal wave is given by $\nu \lambda = \omega/k$. This value can be found by inserting the form of the longitudinal
+wave into the equation of motion.
+
+\subsubsection{Transverse}
+Consider a transverse wave where the wavevector is direction along $\hat{x}$ and the particle motion is along $\hat{y}$. The wave is then given by
+$$v = v_{0}e^{i(kx - \omega t)}$$
+
+The velocity can likewise be found as $\nu \lambda = \omega/k$. Note: for $\textbf{k}$ parallel to [100], the particle velocity will be the same regardless of
+whether particle motion is in $\hat{y}$ or $\hat{z}$. This is not necessarily the case for arbitrary $\textbf{k}$.
+
+\subsection{Waves in [110] }
+Consider a shear wave propogating in the $xy$-plane with particle motion along $\hat{z}$:
+$$
+w = w_{0}e^{i(k_{x}x + k_{y}y - \omega t)}
+$$
+
+For a shear wave propagating in the $xy$-plane with particle motion in the $xy$-plane, there are two equations of interest:
+$$
+u = u_{0}e^{i(k_{x}x + k_{y}y - \omega t)}
+$$
+$$
+v = v_{0}e^{i(k_{x}x + k_{y}y - \omega t)}
+$$
+Inserting these two equations into the corresponding equations of motion gives two coupled equations in $u$ and $v$. Making use of the
+face that $k_{x} = k_{y} = k/\sqrt{2}$, and requiring that the determinant of the coefficients of $u$ and $v$ in the coupled equations vanish, two roots
+for $(\omega/k)^{2}$ can be found: one describing a longitudinal wave (along [110]), the other describing a transverse wave (along [1-10]).
+
+In the special propagation directions of [100], [110], and [111], there are three normal modes with the following polarizations: one longitudinal and two transverse.
+For [100] and [111], the two transverse velocities will equal one another. Sound waves are longitudinal waves.
 \end{document}
