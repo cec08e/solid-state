@@ -13,10 +13,10 @@
 \subsection{Basic Model}
 \begin{itemize}
   \item Theory of metallic conduction proposed by Paul Drude.
-  \item Considers metal a "gas" of electrons on which the kinetic theory of gases may be applied.
+  \item Considers metal a ``gas'' of electrons on which the kinetic theory of gases may be applied.
   \item Assumption of kinetic theory of gases: molecules, or electrons, are identical constituents that move
   in straight lines until they encounter a collision.
-  \item Assumption of metallic "gases": when atoms of a metallic element form a metal, the valence (or "conduction")
+  \item Assumption of metallic ``gases'': when atoms of a metallic element form a metal, the valence (or ``conduction'')
   electrons move freely while the positively charged ions remain stationary.
   \item Reality: metals have a much higher density than gas and include very strong electron-electron and electron-ion
   interactions.
@@ -29,7 +29,7 @@ n = \frac{N}{V} = N_{A}Z\frac{\rho}{A}
 $$
 where $N$ is the total number of conduction electrons, $V$ is the sample volume, $N_{A}$ is Avogradro's number,
 $Z$ is the number of valence electrons per atom, $\rho$ is the mass density of the metal, and $A$ is the atomic mass (mass per mole of
-the metal). A typical charge carrier density is on the order of $n ~ 10^{22} cm^{-3}$ for metals.
+the metal). A typical charge carrier density is on the order of $n \approx 10^{22} cm^{-3}$ for metals.
 
 Another useful way to characterize the charge carrier density is by specifying $r_{s}$, the radius of the spherical volume containing
 one charge carrier.
@@ -66,7 +66,7 @@ $$
   $$ \textbf{v} = \textbf{v}_{0} + \frac{(-e)\textbf{E}t}{m}$$
   So,
   $$ \langle \textbf{v} \rangle = \langle \textbf{v}_{0} \rangle + \frac{(-e)\textbf{E}\tau}{m} = \frac{(-e)\textbf{E}\tau}{m} $$
-  Where the velocity acquired over time $t$ due to a constant acceleration of $\textbf{a} = \frac{-e\textbf{E}}{m}$ is given by $\textbf{at}$.
+  Where the velocity acquired over time $t$ due to a constant acceleration of $\textbf{a} = \frac{-e\textbf{E}}{m}$ is given by $\textbf{a}t$.
 \end{itemize}
 We can therefore generally write the current density as
 $$\textbf{j} = \frac{ne^{2}\tau}{m} \textbf{E}= \sigma \textbf{E} $$
@@ -111,7 +111,7 @@ There are two quantities of interest:
 \end{itemize}
 
 Starting with the Drude equation of motion, we can derive equations for the magnetoresistance and Hall coefficient.
-$$\frac{d\textbf{p}(t)}{dt} =  - \frac{\textbf{p}(t)}{\tau} + \textbf{F} = \frac{\textbf{p}(t)}{\tau} + \left (-e\textbf{E} + \frac{-e}{m}\right)(\textbf{p}\times\textbf{B})$$
+$$\frac{d\textbf{p}(t)}{dt} =  - \frac{\textbf{p}(t)}{\tau} + \textbf{F} = \frac{-\textbf{p}(t)}{\tau} + \left (-e\textbf{E} + \frac{-e}{m}(\textbf{p}\times\textbf{B})\right )$$
 In the steady state, $\frac{d\textbf{p}}{dt} = 0$, so we obtain
 $$
 0 = -\frac{p_{x}}{\tau} + (-eE_{x} + \frac{-e}{m}p_{y}B) = -eE_{x} - \omega p_{y} - \frac{p_{x}}{\tau}
@@ -143,7 +143,7 @@ $$
 $$
 In the absence of a magnetic field, the equation of motion becomes
 $$
-\frac{d\textbf{p}(t)}{dt} =  - \frac{\textbf{p}(t)}{\tau} + \textbf{F} = \frac{\textbf{p}(t)}{\tau} + -e\textbf{E}
+\frac{d\textbf{p}(t)}{dt} =  - \frac{\textbf{p}(t)}{\tau} + \textbf{F} = -\frac{\textbf{p}(t)}{\tau} + -e\textbf{E}
 $$
 And the solution we seek is therefore of the form
 $$
@@ -292,14 +292,13 @@ have any hope of receiving enough energy to exceed the Fermi energy. All other e
 \subsection{Heat Capacity}
 The heat capacity $C$ is given generally by
 $$C = \frac{\partial E}{\partial T}$$
-
 To calculate the heat capacity, we need an equation for the total energy of the system. The expectation value
 of the total energy of the system is given by
 
 $$
 E_{total} = 2\frac{L^{3}}{(2\pi)^{3}}\int d\textbf{k} \epsilon(\textbf{k})n_{F}(\beta(\epsilon(\textbf{k}) - \mu))
 $$
-Integrating out the $theta$ and $phi$ contributions, we obtain the one-dimensional integral
+Integrating out the $\theta$ and $\phi$ contributions, we obtain the one-dimensional integral
 $$
 E_{total} = 2\frac{L^{3}}{(2\pi)^{3}}\int 4\pi k^{2} dk \epsilon(\textbf{k})n_{F}(\beta(\epsilon(\textbf{k}) - \mu))
 $$
@@ -312,7 +311,7 @@ dk = \sqrt{\frac{m}{2\epsilon \hbar^{2}}}d\epsilon
 $$
 The total energy may be written as
 $$
-E_{total} = (L^{3}) \int_{0}^{\infty} \epsilon  g(\epsilon)  n_{F}(\beta(\epsilon-\mu))d\epsilon
+E_{total} = L^{3} \int_{0}^{\infty} \epsilon  g(\epsilon)  n_{F}(\beta(\epsilon-\mu))d\epsilon
 $$
 where $g(\epsilon)d\epsilon$ is the \emph{density of states per unit volume} - the total number of eigenstates with energies between $\epsilon$
 and $\epsilon + d\epsilon$.
@@ -448,7 +447,7 @@ $$
 \subsubsection{Sommerfeld failures}
 \begin{itemize}
   \item The mean free path is quite long - $l \approx 10^{2}$ angstroms. How do electrons avoid scattering from the ions in-between?
-  \item To what degree do core electrons not "count" in calculating Fermi energies and velocities? What about insulators which have no free
+  \item To what degree do core electrons not ``count'' in calculating Fermi energies and velocities? What about insulators which have no free
   electrons?
   \item Why does the Hall coefficient change sign based on charge carrier?
   \item The features of the optical spectra of metals are not explained at all.
@@ -482,7 +481,6 @@ and the Hamiltonian is given by
 $$
 H = \dot{\textbf{x}}\frac{\partial L}{\partial \dot{\textbf{x}}} - L
 $$
-
 If we let $\textbf{P} = \textbf{p} + e\textbf{A}$, then
 $$
 H = \frac{1}{2m}(\textbf{P})^{2}
@@ -502,9 +500,7 @@ where each energy level is known as a \emph{Landau level}.
 
 \subsection{The Landau Gauge}
 See Landau levels problem, homework 2.
-
 In the Landau gauge, $\textbf{A} = Bx\hat{y}$.
-
 The Hamiltonian then becomes
 $$
 H = \frac{1}{2m}(\textbf{p} + exB\hat{y})^{2} = \frac{1}{2m}\left ( p_{x}^{2} + (p_{y} + exB)^{2}\right )
@@ -518,7 +514,7 @@ $$
 $$
 Acting on this solution with the Hamiltonian will replace $p_{y}$ with $\hbar k_{y}$ so we obtain
 $$
-H = \frac{1}{2m}\left ( p_{x}^{2} + (\hbar k_{y} + exB)^{2}\right ) = \frac{p_{x}^{2}}{2m} + \frac{1}{2m}(eB)^{2}(\frac{\hbar k_{y}}{eB} + x)^{2}  )
+H = \frac{1}{2m}\left ( p_{x}^{2} + (\hbar k_{y} + exB)^{2}\right ) = \frac{p_{x}^{2}}{2m} + \frac{1}{2m}\left( eB \right)^{2}\left(\frac{\hbar k_{y}}{eB} + x\right)^{2}
 $$
 
 This is simply the Hamiltonian of a harmonic oscillator with frequency $\omega = (eB/m)$ where the zero of potential has been shifted to $x = -\hbar k_{y}/eB$. Shifting the zero of
@@ -528,17 +524,17 @@ E_{\nu} = \hbar \omega(\nu + \frac{1}{2})
 $$
 and that means that $\psi_{x}(x)$ must be the eigenfunctions satisfying the 1D harmonic oscillator.
 
-An important observation is that the wavefunctions depend on two numbers: $k_{y} and \nu$, but the eigenvalues depend only on $\nu$.
+An important observation is that the wavefunctions depend on two numbers: $k_{y}$ and $\nu$, but the eigenvalues depend only on $\nu$.
 
 Let us impose the volume restriction of $L_{x}$ and $L_{y}$. The restriction on the $\hat{y}$-direction indicates that $k_{y}$ is
 quantized such that
 $$
-k_{y} = \frac{2\pi n}{L}
+k_{y} = \frac{2\pi n}{L_{y}}
 $$
 The restriction on $\hat{x}$ indicates that the center of the potential cannot fall outside of this range. Therefore,
 
 $$
-0 \leq \hbar k_{y}{eB} \leq L_{x}
+0 \leq \frac{\hbar k_{y}}{eB} \leq L_{x}
 $$
 
 Therefore,
@@ -554,7 +550,7 @@ $$
 This is the degeneracy of each Landau level. Now, let
 
 $$
-\mathcal{N} = \frac{L_{x}L_{y}B}{\Phi_{0}}
+\mathcal{N} = \frac{L_{x}L_{y}B}{\Phi_{0}} = \frac{AB}{\Phi_{0}} = \frac{\Phi}{\Phi_{0}}
 $$
 
 where the \emph{quantum of flux} $\Phi_{0} = \frac{2\pi\hbar}{e}$
@@ -583,14 +579,14 @@ The integer quantum Hall effect is characterized by the following features:
     n = \frac{B}{e}\nu\frac{e^{2}}{2\pi\hbar} = \frac{eB\nu}{2\pi\hbar} = \frac{B\nu}{\Phi_{0}}
   $$
   This is the precise number of electrons (per unit area) needed to fill the first $\nu$ Landau levels.
-  \item So the Hall resistivity is inversely proportional to the number of filled Landau levels, and both proportional and inversely proportional to $B$. Therefore, there is no $B$-dependence. Only dependence on $\nu$
+  \item So the Hall resistivity is inversely proportional to the number of filled Landau levels, and both proportional and inversely proportional to $B$. Therefore, there is no $B$-dependence. Only dependence on $\nu$.
 \end{itemize}
 
 \section{Elastic Waves in Crystals}
 We will consider the properties of a crystal when viewed as a continuuous medium. This is
 a valid view for wavelengths longer than $10^{-6} cm$ or frequencies below $10^{12} Hz$.
 
-The basic concepts centers around Hooke's law: for small strains, then the strain in elastic
+The basic concepts centers around Hooke's law: for small strains, the strain in elastic
 solids is directly proportional to the stress.
 
 A uniform deformation in a solid may be defined by the coefficients $e_{\alpha, \beta}$ where
@@ -598,7 +594,6 @@ the new axes $\textbf{x}', \textbf{y}', \textbf{z}'$ are given by
 $$\textbf{x}' = (1+\epsilon_{xx})\hat{x} + \epsilon_{xy}\hat{y} + \epsilon_{xz}\hat{z}$$
 $$\textbf{y}' = \epsilon_{yx}\hat{x} + (1+\epsilon_{yy})\hat{y} + \epsilon_{yz}\hat{z}$$
 $$\textbf{z}' = \epsilon_{zx}\hat{x} + \epsilon_{zy}\hat{y} + (1+\epsilon_{zz})\hat{z}$$
-
 The displacement $\textbf{R}$ of the deformation is defined by
 $$\textbf{R} = \textbf{r}' - \textbf{r} = x(\textbf{x}' - \hat{x}) + y(\textbf{y}' - \hat{y}) +z(\textbf{z}' - \hat{z})$$
 More explicitly,
@@ -612,7 +607,6 @@ More explicitly,
 Which can be written as
 
 $$\textbf{R}(\textbf{r}) = u(\textbf{r})\hat{x} + v(\textbf{r})\hat{y} + w(\textbf{r})\hat{z}$$
-
 It is usual to work with the following components to define the \emph{strain}:
 $$e_{1} = e_{xx} \equiv \epsilon_{xx} = \frac{\partial u}{\partial x}$$
 $$e_{2} = e_{yy} \equiv \epsilon_{yy} = \frac{\partial v}{\partial y}$$
@@ -626,7 +620,6 @@ The \emph{dilation} is the fractional increase of volume associated with a defor
 $$
 \delta \equiv e_{xx} + e_{yy} + e_{zz}
 $$
-
 The force acting on a unit area is defined as the \emph{stress}. The nine stress components are given by
 $\sigma_{ij}$, which represents a force acting in the $\hat{i}$ direction on a face whose normal is in the $\hat{j}$
 direction. Note: if a body is in static equilibrium (or simply not rotating), the total torque about the origin must vanish.
@@ -636,7 +629,6 @@ Therefore, $\sigma_{ij} = \sigma_{ji}$ and there are only six, instead of nine, 
   \item The dimensions of stress are force per unit area, or energy per unit volume.
   \item Strain is dimensionless.
 \end{itemize}
-
 Hooke's law states that for small deformations, the strain is directly proportional to the stress.
 \begin{itemize}
   \item The \emph{elastic compliance constants} \textbf{S} (a $6\times6$ matrix) satisfy
@@ -645,7 +637,6 @@ Hooke's law states that for small deformations, the strain is directly proportio
   \textbf{$\sigma$} $ = \textbf{C}\textbf{e}$
   \item The elastic stiffness constants are symmetrical: $C_{\alpha\beta} = C_{\beta\alpha}$
 \end{itemize}
-
 The \emph{elastic energy density } $U$ is given by
 $$
 U = \frac{1}{2}\sum_{\lambda = 1}^{6}\sum_{\mu = 1}^{6}\tilde{C}_{\lambda\mu}e_{\lambda}e_{\mu}
@@ -654,7 +645,6 @@ where $\tilde{C} = C$? The stress components $\sigma_{ij}$ are found by taking t
 associated strain component. For example,
 
 $$\sigma_{xx} = \frac{\partial U}{\partial e_{xx}} = \frac{\partial U}{\partial e_{1}}$$
-
 For a cubic crystal, symmetry allows
 $$
 \begin{bmatrix}
@@ -680,7 +670,6 @@ The net x-component of the force on a cubic crystal of volume $\Delta x \Delta y
 $$
 F_{x} = \left ( \frac{\partial \sigma_{xx}}{\partial x} + \frac{\partial \sigma_{xy}}{\partial y} + \frac{\partial \sigma_{xz}}{\partial z} \right)\Delta x \Delta y \Delta z
 $$
-
 The equation of motion in the x-direction is therefore
 $$\rho \ddot{u} = \left ( \frac{\partial \sigma_{xx}}{\partial x} + \frac{\partial \sigma_{xy}}{\partial y} + \frac{\partial \sigma_{xz}}{\partial z} \right)$$
 and similar equations follow for $v$ and $w$.
@@ -689,7 +678,6 @@ and similar equations follow for $v$ and $w$.
 \subsubsection{Longitudinal}
 Consider a longitudinal wave given by
 $$ u = u_{0}e^{i(kx - \omega t)}$$
-
 where the wavevector and the particle motion are both along the $x$ cube edge. The wavevector is given by $k = \frac{2\pi}{\lambda}$ and $\omega = 2\pi\nu$ is the
 angular frequency. The velocity of the longitudinal wave is given by $\nu \lambda = \omega/k$. This value can be found by inserting the form of the longitudinal
 wave into the equation of motion.
@@ -697,7 +685,6 @@ wave into the equation of motion.
 \subsubsection{Transverse}
 Consider a transverse wave where the wavevector is direction along $\hat{x}$ and the particle motion is along $\hat{y}$. The wave is then given by
 $$v = v_{0}e^{i(kx - \omega t)}$$
-
 The velocity can likewise be found as $\nu \lambda = \omega/k$. Note: for $\textbf{k}$ parallel to [100], the particle velocity will be the same regardless of
 whether particle motion is in $\hat{y}$ or $\hat{z}$. This is not necessarily the case for arbitrary $\textbf{k}$.
 
@@ -706,7 +693,6 @@ Consider a shear wave propogating in the $xy$-plane with particle motion along $
 $$
 w = w_{0}e^{i(k_{x}x + k_{y}y - \omega t)}
 $$
-
 For a shear wave propagating in the $xy$-plane with particle motion in the $xy$-plane, there are two equations of interest:
 $$
 u = u_{0}e^{i(k_{x}x + k_{y}y - \omega t)}
