@@ -1,0 +1,93 @@
+\title{Solid State Physics: Midterm 2 Review}
+
+\documentclass[10pt]{article}
+\usepackage{amsthm}
+\usepackage{graphicx}
+\usepackage{subfig}
+\usepackage{physics}
+\graphicspath{ {figures/} }
+\begin{document}
+\maketitle
+
+\section{Crystal Structure}
+\subsection{Basics of Crystal Structure}
+\begin{itemize}
+\item A \emph{lattice} is an infinite set of points defined by integer sums of a set of linearly
+independent \emph{primitive lattice vectors}.
+\item Alternatively: A \emph{lattice} is an infintie discrete set of vectors where addition of
+any two vectors in the set gives a third vector in the set, or a \emph{lattice} is an infinite
+discrete set of points where the environment of any given point is equivalent to the environment
+of any other point.
+\item Lattice points may be described in three dimensions as
+$$\textbf{R} = n_{1}\textbf{a}_{1} + n_{2}\textbf{a}_2 + n_{3}\textbf{a}_{3}$$
+\item In 2+ dimensions, the choice of primitice lattice vectors is not unique.
+\end{itemize}
+
+\begin{itemize}
+  \item A \emph{unit cell} is the repeated motif which is the elementary building block of
+  any periodic structure. When many identical unit cells are tiled together, they
+  completely fill all of space and reconstruct the full structure.
+  \item A \emph{primitive unit cell} is a unit cell containing exactly one lattice point.
+  \item A \emph{conventional unit cell} is a typically less-minimal unit cell, often
+  with orthogonal axes, chosen due to ease of use.
+  \item A \emph{Wigner-Seitz cell} is constructed by including all points in space that are
+  closer to a given lattice point than any other lattice point. Approach: choose a lattice cell
+  and draw lines to all possible neighbors. Perpendicular bisectors of these lines bound the
+  Wigner-Seitz cell.
+  \item The description of the unit cell with respect to the associated lattice point is
+  known as the \emph{basis}.
+  \item The positions of atoms can be described by
+  $$ \textbf{R} = \textbf{R}_{lattice} + \textbf{R}_{basis} $$
+  \item The \emph{coordination number} of a lattice is the number of nearest neighbors to any point of the lattice.
+\end{itemize}
+
+\subsection{Three-Dimensional Lattices}
+The simplest example is the \emph{simple cubic} lattice.
+\begin{itemize}
+  \item The primitive unit cell is typically a cube, where each corner contributes $1/8$ lattice point.
+  \item \emph{Tetragonal} and \emph{orthorhombic} lattices have two and three different primitive lattice
+  vector lengths, respectively.
+  \item A point in the lattice may be written as $[uvw]$ where
+  $$[uvw] =  u\textbf{a}_{1} + v\textbf{a}_2 + w\textbf{a}_{3}$$
+  \item In the case of orthogonal axes, $\textbf{a}_{1}$ is assumed to be in the $\hat{x}$ direction, etc.
+\end{itemize}
+
+The \emph{body-centered cubic} lattice is identical to the simple cubic lattice, but with an additional
+lattice point in the center of the cube.
+\begin{itemize}
+  \item The conventional unit cell contains $8(1/8) + 1 = 2$ lattice points.
+  \item The points of the BCC lattice can be written as
+  $$\textbf{R}_{corner} = [n_{1}, n_{2}, n_{3}]$$
+  $$\textbf{R}_{center} = [n_{1}, n_{2}, n_{3}] + [1/2, 1/2, 1/2]$$
+  \item We can also think of the BCC as two interpenetrating SC lattices, displaced by $[1/2, 1/2, 1/2]$.
+  \item The coordination number $Z = 8$.
+  \item One choice of primitive lattice vectors:
+  $$\textbf{a}_{1} = [1, 0, 0]$$
+  $$\textbf{a}_{2} = [0, 1, 0]$$
+  $$\textbf{a}_{3} = [1/2, 1/2, 1/2]$$
+
+\end{itemize}
+
+The \emph{face-centered cubic} lattice is similar to the simple cubic lattice, but with the addition of a
+lattice point on every cube face.
+\begin{itemize}
+\item The conventional unit cell contains $8(1/8) + 6(1/2) = 4$ lattice points.
+\item The points of the FCC lattice can be written as
+$$\textbf{R}_{corner} = [n_{1}, n_{2}, n_{3}]$$
+$$\textbf{R}_{xy} = [n_{1}, n_{2}, n_{3}] + [1/2, 1/2, 0]$$
+$$\textbf{R}_{yz} = [n_{1}, n_{2}, n_{3}] + [0, 1/2, 1/2]$$
+$$\textbf{R}_{zx} = [n_{1}, n_{2}, n_{3}] + [1/2, 0, 1/2]$$
+\item We can also think of the FCC as four interpenetrating SC lattices, displaced as described above.
+\item One choice of primitive lattice vectors:
+$$\textbf{a}_{1} = [1/2, 1/2, 0]$$
+$$\textbf{a}_{2} = [1/2, 0, 1/2]$$
+$$\textbf{a}_{3} = [0, 1/2, 1/2]$$
+
+
+
+\end{itemize}
+
+\section{Reciprocal Lattice, Brillouin Zone, Waves in Crystals}
+
+
+\end{document}
