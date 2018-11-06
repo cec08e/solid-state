@@ -126,7 +126,65 @@ quantum number $n$.
 \end{itemize}
 
 \section{Vibrations of the One-Dimensional Diatomic Chain}
+Consider a one-dimensional chain of alternating masses $m_{1}$ and $m_{2}$ with alternating connecting spring constants $\kappa_{1}$ and $\kappa_{2}$.
+The unit cell for the diatomic chain consists of both masses and is of length (lattice constant) $a$. It is useful to pick a reference point for each unit
+cell, the set of these reference points forms a simple lattice. Within each unit cell, the individual atoms in the cell are described relative to the reference
+point - this description forms the basis.
 
+\subsection{Normal Modes}
+Assume for now that $m_{1} = m_{2} = m$. The equations of motion follow from the monatomic case. But now, let $x_{n}$ be the position of the $n$th $m_{1}$
+mass and $y_{n}$ be the position of the $n$th $m_{2}$ mass. Let $\kappa_{1}$ connect $y_{n}$ to $x_{n+1}$.
+$$m\ddot{\delta x_{n}} = \kappa_{2}(\delta y_{n} - \delta x_{n}) + \kappa_{1}(\delta y_{n-1} - \delta x_{n})$$
+$$m\ddot{\delta y_{n}} = \kappa_{1}(\delta x_{n+1} - \delta y_{n}) + \kappa_{2}(\delta x_{n} - \delta y_{n})$$
+The ansatz solutions will be
+$$\delta x_{n} = A_{x}e^{i \omega t - ikna}$$
+$$\delta y_{n} = A_{y}e^{i \omega t - ikna}$$
+\begin{itemize}
+  \item Because the lattice spacing is $a$, $k$ is physically equivalent to $2\pi/a$, so the first Brillouin zone is defined by
+  $$-\pi/a \geq k \leq \pi/a$$
+  \item For $N$ unit cells, such that the system length is $L = Na$, the allowed values of $k$ are
+  $$k = \frac{2\pi m}{Na} = \frac{2 \pi m}{L}$$
+  \item The number of possible $k$ values is $N$ - one value of $k$ per unit cell.
+  \item Debye's intuition: there should be one mode per degree of freedom. We have $2N$ degrees of freedom, but $N$ values of $k$. Resolution:
+  there are two modes per $k$ value.
+\end{itemize}
+
+Plugging in the ansatz solutions to the equations of motion yields
+$$-\omega^{2}mA_{x} = \kappa_{2}A_{y} + \kappa_{1}A_{y}e^{ika} - (\kappa_{1} + \kappa_{2})A_{x}$$
+$$-\omega^{2}mA_{y} = \kappa_{1}A_{x}e^{-ika} + \kappa_{2}A_{x} - (\kappa_{1} + \kappa_{2})A_{y}$$
+
+This can be written as
+$$
+m\omega^{2} \begin{bmatrix}
+A_{x}\\ A_{y}
+\end{bmatrix} =
+\begin{bmatrix}
+ (\kappa_{1} + \kappa_{2})& -\kappa_{2} - \kappa_{1}e^{ika}\\
+-\kappa_{2}-\kappa_{1}e^{-ika} & (\kappa_{1} + \kappa_{2})
+\end{bmatrix}
+\begin{bmatrix}
+A_{x}\\ A_{y}
+\end{bmatrix}
+$$
+
+The solutions are obtained by finding the zeroes of the characteristic determinant.
+$$
+0 = \begin{vmatrix}
+ (\kappa_{1} + \kappa_{2}) - m\omega^{2}& -\kappa_{2} - \kappa_{1}e^{ika}\\
+-\kappa_{2}-\kappa_{1}e^{-ika} & (\kappa_{1} + \kappa_{2})-m\omega^{2}
+\end{vmatrix}
+$$
+
+The roots are given by
+$$
+m\omega^{2} = (\kappa_{1} + \kappa_{2}) \pm \left | \kappa_{1} + \kappa_{2}e^{ika}\right |
+$$
+which can be written as
+$$
+\omega^{2} = \frac{(\kappa_{1} + \kappa_{2})}{m} \pm \frac{\sqrt{\kappa_{1}^{2} + \kappa_{2}^{2} + 2\kappa_{1}\kappa_{2}cos(ka)}}{m}
+$$
+The $\pm$ in the dispersion indicates that there are two branches of the dispersion for each $k$ value - and therefore $2N$ normal modes
+in total. 
 
 \section{Crystal Structure}
 \subsection{Basics of Crystal Structure}
@@ -206,4 +264,11 @@ $$\textbf{a}_{3} = [0, 1/2, 1/2]$$
 \section{Reciprocal Lattice, Brillouin Zone, Waves in Crystals}
 
 
+\section{Misc}
+\begin{itemize}
+  \item $$\sin(x) = \frac{e^{ix} - e^{-ix}}{2i}$$
+  \item $$\cos(x) = \frac{e^{ix} + e^{-ix}}{2}$$
+  \item $$\sin^{2}(x) = \frac{1 - \cos(2x)}{2}$$
+  \item $$\cos^{2}(x) = \frac{1 + \cos(2x)}{2}$$
+\end{itemize}
 \end{document}
