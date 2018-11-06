@@ -184,7 +184,88 @@ $$
 \omega^{2} = \frac{(\kappa_{1} + \kappa_{2})}{m} \pm \frac{\sqrt{\kappa_{1}^{2} + \kappa_{2}^{2} + 2\kappa_{1}\kappa_{2}cos(ka)}}{m}
 $$
 The $\pm$ in the dispersion indicates that there are two branches of the dispersion for each $k$ value - and therefore $2N$ normal modes
-in total. 
+in total.
+
+\begin{figure}
+  \includegraphics[width=\linewidth]{1d_dia_disp.png}
+  \caption{Dispersion relation for 1D diatomic chain.}
+\end{figure}
+
+The long-wavelength, low-energy branch of excitations with linear dispersion (corresponding to $\omega_{-}$ as $k \rightarrow 0$) is the
+\emph{acoustic mode}. In this linear region, we expect
+$$\omega_{-} = v_{sound}k$$
+Therefore,
+$$v_{sound} = \frac{d\omega_{-}}{dk} = \sqrt{\frac{a^{2}\kappa_{1}\kappa_{2}}{2m(\kappa_{1}+\kappa_{2})}}$$
+
+The higher-energy branch is the \emph{optical mode}. At $k = 0$, the optical frequency is
+$$\omega_{+}(k = 0) = \sqrt{\frac{2(\kappa_{1} + \kappa_{2})}{m}}$$
+and $v_{group} = \omega_{+}' = 0$. Side note: optical modes are so-named because photons can only be absorbed by solids for very small $k$ (since
+photon energy is given by $\omega = ck$). But at very small $k$, only the optical modes have enough energy to absorb a photon and conserve energy.
+
+\subsubsection{The Long Wavelength Limit}
+In the long wavelength limit ($k \rightarrow 0$), the eigenvalue equation becomes
+$$
+\omega^{2} \begin{bmatrix}
+A_{x}\\ A_{y}
+\end{bmatrix} = \frac{\kappa_{1} + \kappa_{2}}{m}
+\begin{bmatrix}
+ 1 & -1 \\
+-1 & 1
+\end{bmatrix}
+\begin{bmatrix}
+A_{x}\\ A_{y}
+\end{bmatrix}
+$$
+
+\begin{itemize}
+  \item As $k \rightarrow 0$, $\omega_{-} \rightarrow 0$, and we obtain
+  $$A_{x} = A_{y} = 1$$
+  which indicates that the two masses in the unit cell move together (in-phase) in the long wavelength limit
+  of the acoustic mode.
+  \item As $k \rightarrow 0$, $\omega_{+}^{2} \rightarrow \frac{2(\kappa_{1} + \kappa_{2})}{m}$, and we obtain
+  $$A_{x} = -A_{y}$$
+  which indicates that the two masses in the unit cell move in opposite directions ($180$ degrees out of phase) in
+  the long wavelength limit of the optical mode.
+\end{itemize}
+
+Note: in the case of $M$ atoms per unit cell, there will be $M$ modes per distinct value of $k$ (i.e. $M$ dispersion branches) and one branch
+will be acoustic ($w(k) \rightarrow 0$ as $k \rightarrow 0$) while the rest are optical. When higher degrees of freedom (e.g. transverse motion)
+are allowed, we must take them into account when determining number of modes. For example, 3D crystals with $n$ atoms per unit cell have $3n$ degrees of
+freedom per unit cell and $3n$ total dispersion branches - $3$ of these are acoustic, while $3(n-1)$ are optical.
+
+\subsubsection{The Brillouin Zone Boundary}
+At the Brillouin zone boundary, $k = \pm \frac{\pi}{a}$. The frequencies are (assuming $\kappa_{1} > \kappa_{2}$)
+$$
+\omega_{-} = \sqrt{\frac{2\kappa_{2}}{m}}
+$$
+$$
+\omega_{+} =  \sqrt{\frac{2\kappa_{1}}{m}}
+$$
+and, in both cases, $v_{group} \rightarrow 0$.
+
+\subsection{Brillouin Zone Schemes and Monoatomic Perturbations }
+\begin{itemize}
+  \item The \emph{reduced zone scheme} is the plotting of all dispersion relations within the first Brillouin zone only. See Fig. 2.
+  \item The \emph{extended zone scheme} is the plotting of all dispersion relations across multiple Brillouin zones such that each $k$
+  point is mapped to a single mode. See Fig. 3.
+\end{itemize}
+
+In the limit $\kappa_{1} \rightarrow \kappa_{2}$, the two atoms in the unit cell become truly indistinguishable and we approach the simple monatomic
+chain situation with lattice constant $a/2$. We can see that the dispersion curve of the diatomic chain with lattice constant $a$ will also approach that of a monatomic chain
+with lattice constant $a/2$ (see Fig. 4).
+\begin{figure}
+  \includegraphics[width=\linewidth]{1d_dia_ext.png}
+  \caption{Dispersion relation for 1D diatomic chain.}
+\end{figure}
+
+\begin{figure}
+  \includegraphics[width=\linewidth]{1d_dia_to_mono.png}
+  \caption{Dispersion relation for 1D diatomic chain as $\kappa_{1} \rightarrow \kappa_{2}$.}
+\end{figure}
+
+When the atoms in the unit cell are slightly different, a small gap opens at the Brillouin zone boundary, but the dispersion will continue to mostly
+look like the monatomic case.
+
 
 \section{Crystal Structure}
 \subsection{Basics of Crystal Structure}
@@ -263,6 +344,42 @@ $$\textbf{a}_{3} = [0, 1/2, 1/2]$$
 
 \section{Reciprocal Lattice, Brillouin Zone, Waves in Crystals}
 
+\subsection{General Reciprocal Lattice Definition}
+Given a direct lattice of points $\textbf{R}$, a point $\textbf{G}$ is a point in the reciprocal lattice if and only if
+\begin{equation}
+  \boxed{e^{i\textbf{G}\cdot \textbf{R}} = 1}
+\end{equation}
+for all points $\textbf{R}$ of the direct lattice. If we write the points of the direct lattice in the form
+$$
+\textbf{R} = n_{1}\textbf{a}_{1} + n_{2}\textbf{a}_{2} + n_{3}\textbf{a}_{3}
+$$
+where $\textbf{a}_{i}$ are the primitive lattice vectors, then the points of the reciprocal lattice can be written in
+the form
+$$
+\textbf{G} = m_{1}\textbf{b}_{1} + m_{2}\textbf{b}_{2} + m_{3}\textbf{b}_{3}
+$$
+where $\textbf{b}_{i}$ are the primitive reciprocal lattice vectors and $$\textbf{a}_{i}\cdot\textbf{b}_{j} = 2\pi \delta_{ij}$$.
+
+
+Note: one such choice of $\textbf{b}_{i}$ is
+$$
+\textbf{b}_{1} = \frac{2\pi \textbf{a}_{2} \times \textbf{a}_{3}}{\textbf{a}_{1} \cdot (\textbf{a}_{2} \times \textbf{a}_{3})}
+$$
+$$
+\textbf{b}_{2} = \frac{2\pi \textbf{a}_{3} \times \textbf{a}_{1}}{\textbf{a}_{1} \cdot (\textbf{a}_{2} \times \textbf{a}_{3})}
+$$
+$$
+\textbf{b}_{3} = \frac{2\pi \textbf{a}_{1} \times \textbf{a}_{2}}{\textbf{a}_{1} \cdot (\textbf{a}_{2} \times \textbf{a}_{3})}
+$$
+
+\subsection{Reciprocal Lattice as a Fourier Transform}
+In one-dimension, the direct lattice is given by $R_{n} = an$. The density could then be written as
+$$\rho(r) = \sum_{n}\delta(r - an)$$
+The Fourier tranform is then
+$$\mathcal{F}[\rho(r)] = \int dr e^{ikr} \rho(r) = \sum_{n} \int dr e^{ikr} \delta(r-an) = \sum_{n}e^{ikan}$$
+Since $e^{ikan} = 1$ if $k = 2\pi m/a$ (that is, if $k$ is a point on the reciprocal lattice) the sum will accumulate infinitely. If $k$ does not meet this condition, the sum terms
+will oscillate and converge to 0. We obtain
+$$\mathcal{F}[\rho(r)] = \sum_{n}e^{ikan} = \frac{2\pi}{|a|}\sum_{m}\delta(k - 2 \pi m/ a)$$
 
 \section{Misc}
 \begin{itemize}
