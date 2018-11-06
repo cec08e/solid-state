@@ -9,6 +9,125 @@
 \begin{document}
 \maketitle
 
+
+\section{One-dimensional Monatomic Chain}
+Consider a chain of identical atoms of mass $m$ and lattice spacing $a$. The position of the $n$th atom is $x_{n}$
+and the equilibrium position of the $n$th atom is $x_{n}^{eq} = na$. Deviations from the equilibrium position are
+expressed as $\delta x_{n}$ where
+$$\delta x_{n} = x_{n} - x_{n}^{eq} $$
+The total potential energy of the chain is
+$$V = \sum_{i} = \frac{1}{2}\kappa(x_{i+1}-x_{i}-a)^{2} = \sum_{i}\frac{1}{2}\kappa(\delta x_{i+1} - \delta x_{i})^{2}$$
+The force on the $n$th mass of the chain is
+$$F_{n} = -\frac{\partial V}{\partial x_{n}} = \kappa(\delta x_{n+1} - \delta x_{n}) + \kappa(\delta x_{n-1} - \delta x_{n})$$
+From this we obtain Newton's equation of motion
+$$m(\delta \ddot{x}_{n}) = F{n} =  \kappa(\delta x_{n+1}+ \delta x_{n-1} - 2\delta x_{n})$$
+
+\begin{itemize}
+  \item A \emph{normal mode} is defined to be a collective oscillation where all particles move at the same frequency.
+  \item Ansatz solution to equation of motion:
+  $$\delta x_{n} = Ae^{i\omega t - ikx_{n}^{eq}} = Ae^{i\omega t - ikna}$$
+  where $A$ is the amplitude of oscillation, and $k$ and $\omega$ are the wavevector and frequency of the proposed wave.
+  \item Even though the solution is complex, we are implicitly meant to take the real part. We only need to consider $\omega \geq 0$
+  but $k$ can be positive or negative.
+\end{itemize}
+
+Plugging the ansatz into the equation of motion yields
+$$m\omega^{2} = 2\kappa\left [ 1-\cos(ka)\right] = 4\kappa \sin^{2}(ka/2)$$
+and therefore
+$$\omega = 2\sqrt{\frac{\kappa}{m}} \left | \sin(\frac{ka}{2})\right |$$
+which is the \emph{dispersion relation} - defined as the relationship between frequency (or energy) and a wavevector (or momentum).
+
+\begin{figure}
+  \includegraphics[width=\linewidth]{1d_disp.png}
+  \caption{Dispersion relation for 1D monatomic chain.}
+\end{figure}
+
+\subsection{Reciprocal Lattice}
+The dispersion relation in Fig. 1 is periodic in $k \rightarrow k + 2\pi/a$. An important
+general principle is the following: \emph{A system which is periodic in real space with a periodicity
+$a$ will be periodic in reciprocal space with periodicity $2\pi/a$}. In other words, if the system "looks
+the same" when $x \rightarrow x + a$, then the dispersion will look the same when $k \rightarrow k + 2\pi/a$.
+
+
+The periodic unit in $k$-space is known as the \emph{Brillouin zone}. The \emph{first Brillouin zone} is centered about $k = 0$.
+The points $k = \pm \pi/a$  in Fig. 1 are known as the \emph{Brillouin zone boundary}.
+
+
+If we take $k \rightarrow k + 2\pi p/a$, where $p$ is any integer, then our solution for $\delta x_{n}$ will not change since it is
+a deep fact that
+$$e^{i2\pi n p} = 1$$
+The \emph{reciprocal lattice} is therefore defined as a set of point in $k$-space (\emph{reciprocal space}) which are physically
+equivalent to the point $k = 0$. The set of points $x_{n}$ are known as the \emph{direct lattice} or \emph{real-space lattice}.
+
+As an example, the points in the direct lattice of the one-dimensional monatomic chain with lattice spacing $a$ are
+$$x_{n} = ..., -2a, -a, 0, a, 2a, ...$$
+and the reciprocal lattice points are
+$$G_{n} = ..., -2\left (\frac{2\pi}{a} \right), -\left (\frac{2\pi}{a} \right), 0, \left (\frac{2\pi}{a} \right), 2\left (\frac{2\pi}{a} \right),... $$
+And the defining property of the reciprocal lattice points are:
+\begin{equation}
+  \boxed{e^{iG_{m}x_{n}} = 1}
+\end{equation}
+That is, a point $G_{m}$ is in the reciprocal lattice only if the above holds for all $x_{n}$ in the direct lattice.
+An important note: $k$ and $k+G_{m}$ only describe the same wave when measured at direct lattice points $x_{n}$. If measured arbitrarily
+along the x-axis, they may differ.
+
+\subsection{Sound Waves}
+Sound waves are vibrations with a long wavelength compared to the interatomic spacing. That is, $k = \frac{2\pi}{\lambda}$, where $\lambda >> a$.
+Therefore, the dispersion becomes
+$$\omega = v_{sound}k = \left ( a \sqrt{\frac{\kappa}{m}}\right)k$$
+At larger $k$ (shorter $\lambda$), the dispersion is no longer linear and one typically defines two velocities.
+\begin{itemize}
+  \item The group velocity $v_{group} = d\omega /dk$. The speed at which the wavepacket moves. The group velocity becomes 0 at the Brillouin zone boundary.
+  \item The phase velocity $v_{phase} = \omega / k$. The speed at which individual minima/maxima move.
+\end{itemize}
+
+\subsection{Counting Normal Modes}
+At first glance, it would appear that any choice of $k$ in the first Brillouin zone yields a unique normal mode with frequency $\omega(k)$.
+But periodic boundary conditions imply that $x_{n} = x_{n + N}$. This yields the requirement in our solution that
+$$e^{ikNa} = 1$$
+From which we obtain the restriction on possible values of $k$:
+$$k = \frac{2\pi m}{Na}$$
+where $m$ is some integer. So the full dispersion relation only contain several allowed $k$ values, the spacing between which is $2\pi/Na$.
+The total number of normal modes is therefore given by the range of the Brillouin zone (e.g. $[-\pi/a,\pi/a]$), divided by the spacing between
+allowed normal mode values of $k$. Be careful to only include one endpoint in the Brillouin zone.
+
+\subsection{Quantum Phonons}
+Quantum correspondance: If a classical harmonic system has a normal oscillation mode at frequency $\omega$ the corresponding
+quantum system will have eigenstates with energy
+$$E_{n} = \hbar \omega (n + \frac{1}{2})$$
+\begin{itemize}
+\item At a given wavevector $k$ there are many possible eigenstates.
+\item The ground state is the $n = 0$ state with zero point energy $\hbar \omega(k)/2$.
+\item All excitations occur in units of $\hbar \omega(k)$.
+\end{itemize}
+A \emph{phonon} is a discrete quantum of vibration, and corresponds to an excitation of the normal mode by increasing the
+quantum number $n$.
+\begin{itemize}
+  \item Phonons are bosons. We may think of them as particles with energy $\hbar \omega$ and \emph{crystal} momentum $\hbar k$. We always describe
+  momentum using $k$ within the first Brillouin zone. Even though $k$ is equivalent to $k + G_{m}$, they do not describe the same momentum.
+  \item At finite temperature, there are non-zero number of phonons occupying a given mode, described by the Bose occupation factor:
+  $$n_{B}(\beta \hbar \omega) = \frac{1}{e^{\beta \hbar \omega} - 1}$$
+  \item The expectation value of energy of phonons at wavevector $k$ is given by
+  $$E_{k} = \hbar \omega(k) \left (n_{B}(\beta \hbar \omega) + \frac{1}{2} \right )$$
+  \item The total energy is given by
+  $$U_{tot} = \sum_{k} E_{k}$$
+  where the sum is over all possible normal modes (i.e. $\frac{-\pi}{a} < k \leq \frac{\pi}{a}$, such that $k = \frac{2\pi m}{Na}$).
+  When the system is very large, the spacing between normal modes shrinks, and we may convert the sum into an integral.
+  $$\sum_{k} \rightarrow \frac{Na}{2\pi}\int_{-\pi/a}^{\pi/a}dk$$.
+  \item We also note that the total number of normal modes is given by
+  $$\frac{Na}{2\pi}\int_{-\pi/a}^{\pi/a}dk$$
+  \item From the integral form of $U_{tot}$, we could calculate the heat capacity
+  $$C = \frac{dU}{dT}$$
+  \item This approach is identical to the Debye model, except that Debye assumed $\omega = vk$, whereas our dispersion
+  relation is much more complicated.
+  \item We may also convert the integral over $k$ to an integral over $\omega$ by introducing a density of states $g(\omega)$.
+  $$\frac{Na}{2\pi}\int_{-\pi/a}^{\pi/a}dk = \int d\omega g(\omega)$$
+  $$g(\omega) = 2 \frac{Na}{2\pi}\left | \frac{dk}{d\omega}\right |$$
+\end{itemize}
+
+\section{Vibrations of the One-Dimensional Diatomic Chain}
+
+
 \section{Crystal Structure}
 \subsection{Basics of Crystal Structure}
 \begin{itemize}
@@ -82,9 +201,6 @@ $$\textbf{R}_{zx} = [n_{1}, n_{2}, n_{3}] + [1/2, 0, 1/2]$$
 $$\textbf{a}_{1} = [1/2, 1/2, 0]$$
 $$\textbf{a}_{2} = [1/2, 0, 1/2]$$
 $$\textbf{a}_{3} = [0, 1/2, 1/2]$$
-
-
-
 \end{itemize}
 
 \section{Reciprocal Lattice, Brillouin Zone, Waves in Crystals}
