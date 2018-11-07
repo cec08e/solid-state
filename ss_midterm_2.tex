@@ -429,6 +429,13 @@ Miller indices can be used to denote a reciprocal lattice vector, and therefore 
   \frac{1}{x_{1}}:\frac{1}{x_{2}}:\frac{1}{x_{3}} = h:k:l
   $$
   Then $(hkl)$ should be scaled such that they represent the smallest set of integers with this ratio.
+\end{itemize}
+
+\textbf{Important comment}: For any cubic lattice (simple cubic, fcc, or bcc), it is conventional to choose $\textbf{a}_{i}$ to be $a\hat{\textbf{x}}$, $a\hat{\textbf{y}}$,
+and $a\hat{\textbf{z}}$ where $a$ is the cube edge length. Correspondingly, $\textbf{b}_{i}$ are  $2\pi\hat{\textbf{x}}/a$, $2\pi\hat{\textbf{y}}/a$, $2\pi\hat{\textbf{z}}/a$.
+For the simple cubic case, these are the primitive reciprocal lattice vectors. But for bcc and fcc, they are not. So, not all integer sets of miller indices $(hkl)$ will yield
+reciprocal lattice vectors in the bcc and fcc cases.
+
 
 \subsection{General Brillouin Zone}
 The \emph{Brillouin zone}, in general, is any primitive unit cell of the reciprocal lattice.
@@ -444,7 +451,175 @@ The \emph{Brillouin zone}, in general, is any primitive unit cell of the recipro
   \item Every Brillouin zone has the same total area. There are exactly as many $k$ states within a Brillouin zone as there are unit cells in system.
 \end{itemize}
 
+\section{Scattering}
+\subsection{Laue and Bragg Conditions}
+If an incoming wave with incident wavevector $\textbf{k}$ is thought of as a particle, we can model the sample as a potential $V(\textbf{r})$.
+\begin{figure}
+  \includegraphics[width=\linewidth]{scattering1.png}
+  \caption{Generic scattering setup.}
+\end{figure}
+
+Fermi's golden rule tells us that the transition rate $\Gamma(\textbf{k}', \textbf{k})$ per unit time for the particle scattering from $\textbf{k}$ to $\textbf{k}'$ is given by
+$$
+\Gamma(\textbf{k}', \textbf{k}) = \frac{2\pi}{\hbar} \left | \bra{\textbf{k}'}V\ket{\textbf{k}}\right |^{2}\delta(E_{\textbf{k}'} - E_{\textbf{k}})
+$$
+where the matrix element
+$$
+\bra{\textbf{k}'}V\ket{\textbf{k}} = \int d\textbf{r} \frac{e^{-i\textbf{k}'\cdot \textbf{r}}}{L^{3/2}}V(\textbf{r})\frac{e^{-i\textbf{k}\cdot \textbf{r}}}{L^{3/2}} = \frac{1}{L^{3}}\int d\textbf{r} e^{-i(\textbf{k}' - \textbf{k})\cdot \textbf{r}}V(\textbf{r})
+$$
+which is the Fourier transform of the potential. \emph{This matrix element is zero unless $\textbf{k} - \textbf{k}'$ is a reciprocal lattice vector}.
+To prove:
+\begin{itemize}
+  \item Write position $\textbf{r} = \textbf{R} + \textbf{x}$ where $\textbf{R}$ is a lattice vector position and $\textbf{x}$ is a position within the unit cell.
+  \item The matrix element becomes
+  $$\bra{\textbf{k}'}V\ket{\textbf{k}} = \frac{1}{L^{3}} \sum_{\textbf{R}}\int_{unit-cell} d\textbf{x}e^{-i(\textbf{k}'\cdot\textbf{k})\cdot (\textbf{x} + \textbf{R})}V(\textbf{x} + \textbf{R})$$
+  \item If the potential is assumed periodic, $V(\textbf{x} + \textbf{R}) = V(\textbf{x})$. Then we have
+  \begin{equation}
+    \bra{\textbf{k}'}V\ket{\textbf{k}} = \frac{1}{L^{3}} \left [ \sum_{\textbf{R}} e^{-i(\textbf{k}'\cdot\textbf{k})\cdot\textbf{R}} \right ] \left [ \int_{unit-cell} d\textbf{x}e^{-i(\textbf{k}'\cdot\textbf{k})\cdot\textbf{x}}V(\textbf{x}) \right ]
+  \end{equation}
+  \item The term in brackets above vanishes unless $\textbf{k}' - \textbf{k}$ is a reciprocal lattice vector. Therefore, the \emph{Laue condition} is
+  \begin{equation}
+    \boxed{\textbf{k}' - \textbf{k} = \textbf{G}}
+  \end{equation}
+  This is also a statement of conservation of crystal momentum.
+  \item Waves leaving the crystal must also have
+  $$|\textbf{k}| = |\textbf{k}'|$$
+  which is due to conservation of energy, enforced by the delta function in Fermi's golden rule.
 \end{itemize}
+
+\begin{figure}
+  \includegraphics[width=\linewidth]{scattering2.png}
+  \caption{Bragg scattering. The excess distance traveled by the wave striking the lower plane is $2d\sin\theta$}
+\end{figure}
+
+Consider the configuration of Fig. 6.
+\begin{itemize}
+  \item An incoming wave is reflected off two adjacent planes separated by a distance $d$.
+  \item The total deflection angle is $2\theta$.
+  \item The additional distance traveled by the component of the wave that reflects off the bottom layer is $2d\sin\theta$.
+  \item Constructive interference requires that the extra distance be equal to an integer number of wavelengths. \emph{Bragg's Law}:
+  $$n\lambda = 2d\sin\theta$$
+\end{itemize}
+
+\textbf{Laue's condtion and Bragg's law are equivalent}.
+Consider Fig. 7, where the reciprocal lattice vector $\textbf{G}$ representing the family of lattice planes is noted. We can see that
+$$\hat{k}\cdot\hat{G} = \sin\theta = -\hat{k}'\cdot\hat{G}$$
+\begin{figure}
+  \includegraphics[width=\linewidth]{scattering3.png}
+  \caption{Alternative view of Fig 6. }
+\end{figure}
+
+If the Laue condition is satisfied, then $\textbf{k}' - \textbf{k} = \textbf{G}$, where $|\textbf{k}| = |\textbf{k}'| = \frac{2\pi}{\lambda}$.
+The Laue condition can then also be written as
+$$\frac{2\pi}{\lambda}(\hat{k}' - \hat{k}) = \textbf{G}$$
+And therefore,
+
+$$\hat{G}\cdot \frac{2\pi}{\lambda}(\hat{k}' - \hat{k}) = \hat{G}\cdot\textbf{G}$$
+$$\frac{2\pi}{\lambda}(2\sin\theta) = |\textbf{G}|$$
+So we obtain
+$$\lambda = \frac{2\pi}{|\textbf{G}|}(2\sin\theta) = 2d\sin\theta$$
+which is Bragg's law. We could perform the same calculation with another reciprocal lattice vector $n\textbf{G}$ to get the general statement
+$$n\lambda = = 2d\sin\theta$$
+
+\textbf{It is equivalent to say that interference is constructive (Bragg) or crystal momentum is conserved (Laue)}.
+
+\subsection{Scattering Amplitudes}
+The second term in equation 3 is known as the \emph{structure factor}
+$$
+S(\textbf{G}) = \int_{unit-cell} d\textbf{x}\;e^{i(\textbf{k}'\cdot\textbf{k})\cdot\textbf{x}}V(\textbf{x}) = \int_{unit-cell} d\textbf{x}\; e^{-i\textbf{G}\cdot\textbf{x}}V(\textbf{x})
+$$
+The \emph{scattering intensity} is frequently written
+$$I_{(hkl)} = \propto |S_{(hkl)}|^{2}$$
+That is, the intensity of scattering off the lattice planes defined by the reciprocal lattice vector $(hkl)$ is proportional to the
+square of the structure factor at this reciprocal lattice vector.
+
+It is usually a good approximation to assume that the scattering potential $V(\textbf{x})$ can be written as a sum of scattering potentials
+at each atom in the unit cell. Therefore,
+$$
+V(\textbf{x}) = \sum_{j} V_{j}(\textbf{x} - \textbf{x}_{j})
+$$
+where the sum $j$ is over all individual atoms at positions $\textbf{x}_{j}$. There are two main types of scattering probes: neutrons and X-rays.
+
+\subsubsection{Neutrons}
+\begin{itemize}
+  \item Since neutrons are uncharged, the scatter almost exclusively from nuclei.
+  \item The scattering potential is very short-ranged and can be approximated with a delta function:
+  $$V(\textbf{x}) = \sum_{j} f_{j}\delta(\textbf{x} - \textbf{x}_{j})$$
+  where $f_{j}$ is the \emph{form factor} or \emph{atomic form factor} and represents the strength of scattering from that nucleus.
+  \item For neutrons, $f_{j} \propto b_{j}$, the \emph{nuclear scattering length}.
+  $$V(\textbf{x}) \approx \sum_{j} b_{j}\delta(\textbf{x} - \textbf{x}_{j})$$
+  \item Therefore,
+  $$S(\textbf{G}) \approx \sum_{j} b_{j}e^{i\textbf{G}\cdot\textbf{x}_{j}}$$
+\end{itemize}
+
+\subsubsection{X-rays}
+\begin{itemize}
+  \item X-rays scatter from electrons in the system.
+  \item The scattering potential is proportional to the electron density
+  $$V_{j}(\textbf{x} - \textbf{x}_{j}) = Z_{j}g_{j}(\textbf{x} - \textbf{x}_{j})$$
+  where $Z_{j}$ is the atomic number of atom $j$ (its number of electrons) and $g_{j}$ is a short-ranged function.
+  \item The structure factor is
+  $$S(\textbf{G}) \approx \sum_{j} f_{j}(\textbf{G})e^{i\textbf{G}\cdot\textbf{x}_{j}}$$
+  where the form factor $f_{j}$ is proportional to $Z_{j}$ but has some $\textbf{G}$ depedence as well. We can approximate
+  $f_{j}$ to be independent of $\textbf{G}$ if $g$ is extremely short ranged.
+  \item To be precise: $f_{j}(\textbf{G})$ is always the Fourier transform of the scattering potential for atom $j$.
+  We can write:
+    $$f_{j}(\textbf{G}) = \int d\textbf{x}e^{i\textbf{G}\cdot\textbf{x}}V_{j}(\textbf{x})$$
+    where the scattering potential $V_{j}(\textbf{x})$ is proportional to the electron density a distance $\textbf{x}$ from the nucleus.
+    The integral is over all space.
+    \begin{itemize}
+      \item If the density is taken to be a delta function, $f_{j}$ is constant.
+      \item If the density is taken to be constant inside a sphere of radius $r_0$, and zero elsewhere,
+      $$f_{j}(\textbf{G}) \approx 3Z_{j} \left ( \frac{\sin(x) = x\cos(x)}{x^{3}}\right )$$
+      where $x = |\textbf{G}r_{0}|$.
+      \item If the scattering angle is sufficiently small, ($\textbf{G}$ small compared to $1/r_0$), $f_{j} \propto Z_{j}$ with
+      no strong $\textbf{G}$ dependence.
+    \end{itemize}
+\end{itemize}
+
+\subsubsection{Neutrons vs X-rays}
+\begin{itemize}
+  \item Since $f_{j} \propto Z_{j}$ for X-rays, scattering happens very strongly from heavy atoms but hardly at all from light atoms. This makes
+  it difficult to detect light atoms in a solid, as well as to tell apart atoms that are close in $Z_{j}$.
+  \item For neutron scattering, $b_{j}$ varies erratically with atomic number. One can typically distinguish atoms with similar atomic numbers easily.
+  \item Neutron scattering is so short ranged that it effectively has no $\textbf{G}$ dependence, but x-ray scattering does.
+  \item Neutrons have spin and can therefore detect spin configuration from electrons from which they scatter (weakly).
+\end{itemize}
+
+
+\textbf{Example 1}: Caesium Chloride. CsCl can be described as a simple cubic lattice with a basis given by Cs at $[0,0,0]$ and Cl at $[1/2,1/2,1/2]$.
+For orthogonal lattice vectors,
+$$S_{(hkl)} = \sum_{j} f_{j}e^{2\pi i(hx_{j} + ky_{j} + lz_{j})}$$
+where $[x_{j}, y_{j}, z_{j}]$ are the coordinates of atom $j$ in unit of the three orthogonal lattice vectors.
+The structure factor is therefore
+$$S_{(hkl)} = f_{Cs} + f_{Cl}e^{i2\pi (hkl)\cdot [1/2,1/2,1/2]} = f_{Cs} + f_{Cl}(-1)^{h+k+l}$$
+
+\textbf{Example 2}: Caesium bcc. The bcc lattice is alternatively thought of as a simple cubic lattice with basis Cs at $[0,0,0]$ and Cs at $[1/2,1/2,1/2]$
+The structure factor is
+$$S_{(hkl)} = f_{Cs} + f_{Cs}e^{i2\pi (hkl)\cdot [1/2,1/2,1/2]} = f_{Cs} + f_{Cs}(-1)^{h+k+l}$$
+
+\emph{Note}: if $h+k+l$ is an odd number, the structure factor vanishes. This phenomena is known as systematic absence.
+
+\textbf{Example 3}: Copper fcc. The fcc lattice is alternatively thought of as a simple cubic lattice with basis $[0,0,0]$, $[1/2, 1/2, 0]$, $[1/2, 0, 1/2]$, $[0, 1/2, 1/2]$.
+The structure factor of copper fcc is
+$$S_{(hkl)} = f_{Cu}[1  + e^{i\pi (h + k)} + e^{i\pi (h + l)} + e^{i\pi (k + l)}] $$
+The structure factor will vanish unless all $h,k,l$ are odd or even.
+
+Summary of systematic absences:
+\begin{itemize}
+  \item simple cubic - all $hkl$ allowed.
+  \item bcc - $h+k+l$ must be even.
+  \item fcc - $hkl$ must be all odd or all even.
+\end{itemize}
+These selection rules do not depend on the relative length of the lattice vectors - they apply in the orthorhombic case. Selection rules tell you which scattering peaks
+must be absent for a given lattice, but more peaks may vanish due to the details of the basis.
+
+\textbf{Example 4}: ZnS is fcc with basis Zn at $[0,0,0]$ and S at $[1/4, 1/4, 1/4]$. This is equivalent to simple cubic with basis Zn at
+$[0,0,0]$, $[1/2, 1/2, 0]$, etc. and S at $[1/4,1/4,1/4]$, $[3/4,3/4,1/4]$,etc. The structure factor can then be calculated as before. 
+
+
+
+
 \section{Misc}
 \begin{itemize}
   \item $$\sin(x) = \frac{e^{ix} - e^{-ix}}{2i}$$
