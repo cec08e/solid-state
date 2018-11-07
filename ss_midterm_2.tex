@@ -381,6 +381,70 @@ Since $e^{ikan} = 1$ if $k = 2\pi m/a$ (that is, if $k$ is a point on the recipr
 will oscillate and converge to 0. We obtain
 $$\mathcal{F}[\rho(r)] = \sum_{n}e^{ikan} = \frac{2\pi}{|a|}\sum_{m}\delta(k - 2 \pi m/ a)$$
 
+In higher dimensions, with $v$ the volume of the unit cell,
+
+$$\mathcal{F}[\rho(\textbf{r})] = \sum_{\textbf{R}} e^{i\textbf{k}\cdot\textbf{R}} = \frac{(2\pi)^{D}}{v} \sum_{\textbf{G}} \delta^{D}(\textbf{k} - \textbf{G})$$
+
+\subsubsection{Fourier transform of any periodic function}
+For any periodic function $\rho(\textbf{r})$ where $\rho(\textbf{r}) = \rho(\textbf{r} + \textbf{R})$ for any lattice vector $\textbf{R}$, the
+Fourier transform is written
+$$\mathcal{F}[\rho(\textbf{r})] = \int d^3 r e^{i\textbf{k}\cdot\textbf{r}}\rho(\textbf{r})$$
+We can break up the integral over all space into a sum of integrals over unit cells.
+$$\mathcal{F}[\rho(\textbf{r})] = \sum_{\textbf{R}}\int_{unit-cell} d^3 x e^{i\textbf{k}\cdot(\textbf{R}+\textbf{x})}\rho(\textbf{R} + \textbf{x})$$
+Since $\textbf{x}$ is equivalent to $\textbf{x} + \textbf{R}$,
+$$\mathcal{F}[\rho(\textbf{r})] = \sum_{\textbf{R}}e^{i\textbf{k}\cdot\textbf{R}}\int_{unit-cell} d^3 x e^{i\textbf{k}\cdot\textbf{x}}\rho(\textbf{x})$$
+$$\mathcal{F}[\rho(\textbf{r})] = \frac{(2\pi)^{D}}{v} \sum_{\textbf{G}} \delta^{D}(\textbf{k} - \textbf{G}) \cdot \textbf{R}S(\textbf{k})$$
+where the structure factor $S(\textbf{k})$ is given by
+$$S(\textbf{k}) = \int_{unit-cell} d^3 x e^{i\textbf{k}\cdot\textbf{x}}\rho(\textbf{x})$$
+
+\subsection{Reciprocal Lattice Points as Families of Lattice Planes}
+\begin{itemize}
+\item A \emph{lattice plane} or \emph{crystal plane} is a plane containing at least three non-collinear points of a lattice.
+\item A family of lattice planes is an infinite set of equally-spaced parallel lattice planes containing every point in the lattice.
+\item The families of lattice planes are in one-to-one correspondance with the possible directions of reciprocal lattice vectors, to which
+they are normal. Further, the spacing between these lattice planes is $d = 2\pi/|\textbf{G}_{min}|$ where $\textbf{G}_{min}$ is the minimum
+length reciprocal lattice vector in this normal direction.
+\item The relationship $\textbf{G}\cdot \textbf{r} = 2\pi m$, where $\textbf{r}$ is a set of points defining a plane, defines a set of
+lattice planes (each with a different value of $m$). Not every plane needs to contain a lattice point, but the distance between planes is necessarily
+$d = 2\pi/|\textbf{G}|$. The minimal set of planes that capture all lattice points are defined by a maximal spacing $d = 2\pi/|\textbf{G}_{min}|$.
+\end{itemize}
+
+\subsubsection{Miller indices}
+Miller indices can be used to denote a reciprocal lattice vector, and therefore a family of lattice planes.
+\begin{itemize}
+  \item One first chooses edge vectors for the direct unit cell, $\textbf{a}_{i}$.
+  \item Then construct $\textbf{b}_{i}$ such that $\textbf{a}_{i}\cdot \textbf{b}_{j} = 2\pi\delta_{ij}$.
+  \item Reciprocal space vector $\textbf{G}$ may then be written as
+  $$G_{(h,k,l)} = h\textbf{b}_{1} + k\textbf{b}_{2} + l\textbf{b}_{3}$$
+  \item If $\textbf{a}_{i}$ are primitive, so too will be $\textbf{b}_{i}$. Then, any set of indices $(hkl)$ will represent a reciprocal
+  space lattice vector. To represent a family of planes, $(hkl)$ should be chosen to have no common divisor - if they do, they represent a family
+  of planes that do not all necessarily contain direct lattice points.
+  \item If $\textbf{a}_{i}$ are non-primitive, then neither will be $\textbf{b}_{i}$. In this case, not all combinations of $(hkl)$ are reciprocal lattice vectors.
+  \item The spacing between adjacent planes is given by
+  $$ d = \frac{2\pi}{|\textbf{G}|} = \frac{2\pi}{\sqrt{h^{2}|\textbf{b}_{1}|^{2} + k^{2}|\textbf{b}_{2}|^{2} + l^{2}|\textbf{b}_{3}|^{2}}}$$
+  where $\textbf{b}_{i}$ are assumed orthogonal and so $|b_{i}| = 2\pi/|a_{i}|$. Therefore,
+  $$\frac{1}{|d_{(hkl)}|^{2}} = \frac{h^2}{a_{1}^2} + \frac{k^2}{a_{2}^2} + \frac{l^2}{a_{3}^2}$$
+  \item The Miller indices may be obtained by examining the intercepts on the coordinate axis. The relationship is:
+  $$
+  \frac{1}{x_{1}}:\frac{1}{x_{2}}:\frac{1}{x_{3}} = h:k:l
+  $$
+  Then $(hkl)$ should be scaled such that they represent the smallest set of integers with this ratio.
+
+\subsection{General Brillouin Zone}
+The \emph{Brillouin zone}, in general, is any primitive unit cell of the reciprocal lattice.
+\begin{itemize}
+  \item Physical waves in crystals are unchanged if their wavevector is shifted by a reciprocal lattice vector $\textbf{k} \rightarrow \textbf{k} + \textbf{G}$.
+  \item The Brillouin zone contains every physically inequivalent crystal momentum, and they all appear exactly once.
+  \item Construction: start with $\textbf{G} = 0$. All $\textbf{k}$ points closer to 0 than any other reciprocal lattice vector constitute the first
+  Brillouin zone. All $\textbf{k}$ points for which $\textbf{G} = 0$ is the second-closest reciprocal lattice point constitute the second Brillouin zone, etc.
+  \item Draw lines connecting the point $\textbf{G} = 0$ to all reciprocal space points. Draw perpendicular bisectors across these lines. Any point that can be
+  reached without crossing a bisector is in the first Brillouin zone. Any point that can be reached by only crossing one bisector is in the second Brillouin zone, etc.
+  \item Higher Brillouin zones are necessarily made of disconnected pieces.
+  \item On the Brillouin zone boundary, between 0 and $\textbf{G}$, lies a point that is physically equivalent to the point found by adding $-\textbf{G}$ to this point.
+  \item Every Brillouin zone has the same total area. There are exactly as many $k$ states within a Brillouin zone as there are unit cells in system.
+\end{itemize}
+
+\end{itemize}
 \section{Misc}
 \begin{itemize}
   \item $$\sin(x) = \frac{e^{ix} - e^{-ix}}{2i}$$
