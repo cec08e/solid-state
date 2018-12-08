@@ -137,6 +137,67 @@ The one-dimensional tight binding has the following description.
   $$
   \sum_{m}H_{nm}\phi_{m} = E\phi_{n}
   $$
-  where $H_{nm} = \bra{n}H\ket{m}$
+  where $H_{nm} = \bra{n}H\ket{m}$.
+  \item The Hamiltonian can be written
+  $$
+  H = K + \sum_{j}V_{j}
+  $$
+  where $K = \textbf{p}^{2}/2m$ and $V_{j} = V(\textbf{r} - \textbf{R}_{j})$.
 \end{itemize}
+Given the description above, we have
+\begin{equation}
+\begin{aligned}
+  H\ket{m} & = (K + V_{m})\ket{m} + \sum_{j \neq m}V_{j}\ket{m} \\
+           & = \epsilon_{atomic}\ket{m} + \sum_{j \neq m}V_{j}\ket{m}
+\end{aligned}
+\end{equation}
+Therefore,
+$$
+H_{nm} = \bra{n}H\ket{m} = \epsilon_{atomic}\delta_{mn} + \sum_{j \neq m}\bra{n}V_{j}\ket{m}
+$$
+where
+$$
+\sum_{j \neq m}\bra{n}V_{j}\ket{m} = \left\{\begin{matrix}
+ V_{0} & n=m \\
+ -t & n=m\pm 1\\
+ 0 & 0
+\end{matrix}\right.
+$$
+So,
+$$
+H_{n,m} = (\epsilon_{atomic} + V_{0})\delta_{nm} -t(\delta_{n+1,m} + \delta_{n-1,m}) = \epsilon_{0}\delta_{nm} -t(\delta_{n+1,m} + \delta_{n-1,m})
+$$
+
+\subsubsection{Solution}
+We propose an ansatz
+$$\phi_{n} = \frac{e^{-ikna}}{\sqrt{N}}$$
+Note the absence of of a frequency component to the exponent, which is due
+to the fact that we are seeking solutions to the time-independent Schrodinger
+equation.
+\begin{itemize}
+  \item For a system with $N$ sites, and length $L = Na$, there are $N$ possible
+  solutions of the ansatz form.
+  \item Each solution corresponds to $k = 2\pi m/L$, where $m = 0, ..., N-1$.
+\end{itemize}
+Plugging the ansatz into the Schrodinger equation gives
+\begin{equation}
+\sum_{m}H_{nm}\phi_{m} = \epsilon_{0}\frac{e^{-ikna}}{\sqrt{N}} - t\left( \frac{e^{-ik(n+1)a}}{\sqrt{N}} + \frac{e^{-ik(n-1)a}}{\sqrt{N}}\right)
+\end{equation}
+and we also know that
+\begin{equation}
+  E\phi_{n} = E\frac{e^{-ikna}}{\sqrt{N}}
+\end{equation}
+Equating the previous two equations gives us
+$$
+E = \epsilon_{0} - 2t\cos(ka)
+$$
+(Note the correspondance to the phonon spectrum for the 1D monatomic chain). The dispersion curve is shown in Fig. 1.
+
+\begin{figure}
+  \centering
+    \includegraphics[width=\textwidth]{tb1}
+    \caption{Dispersion curve for tight-binding chain.}
+\end{figure}
+
+
 \end{document}

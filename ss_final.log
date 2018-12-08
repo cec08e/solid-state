@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  8 DEC 2018 15:53
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  8 DEC 2018 17:58
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1262,15 +1262,21 @@ File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 99.
  [2] [3]
+<tb1.png, id=24, 799.98875pt x 512.91624pt>
+File: tb1.png Graphic file (type png)
+ <use tb1.png>
+Package pdftex.def Info: tb1.png used on input line 198.
+(pdftex.def)             Requested size: 345.0pt x 221.19928pt.
+ [4] [5 <./tb1.png>]
 (./ss_final.aux) ) 
 Here is how much of TeX's memory you used:
- 12372 strings out of 492995
- 222639 string characters out of 6132704
+ 12382 strings out of 492995
+ 222759 string characters out of 6132704
  259900 words of memory out of 5000000
- 15864 multiletter control sequences out of 15000+600000
+ 15872 multiletter control sequences out of 15000+600000
  9988 words of font info for 36 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 42i,7n,40p,10384b,275s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 42i,8n,40p,10384b,275s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfon
 ts/cm/cmbx10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfont
 s/cm/cmbx12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts
@@ -1283,10 +1289,10 @@ r12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr1
 fb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pf
 b></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb>
 </usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on ss_final.pdf (3 pages, 131761 bytes).
+Output written on ss_final.pdf (5 pages, 244702 bytes).
 PDF statistics:
- 62 PDF objects out of 1000 (max. 8388607)
- 44 compressed objects within 1 object stream
+ 71 PDF objects out of 1000 (max. 8388607)
+ 49 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 6 words of extra memory for PDF output out of 10000 (max. 10000000)
 
