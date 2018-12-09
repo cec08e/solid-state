@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  8 DEC 2018 17:58
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  8 DEC 2018 22:33
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1267,13 +1267,40 @@ File: tb1.png Graphic file (type png)
  <use tb1.png>
 Package pdftex.def Info: tb1.png used on input line 198.
 (pdftex.def)             Requested size: 345.0pt x 221.19928pt.
- [4] [5 <./tb1.png>]
+
+Overfull \hbox (12.0007pt too wide) in paragraph at lines 205--206
+[]\OT1/cmr/m/n/10 Zero group ve-loc-ity (flat curve) at the Bril-louin zone bou
+nd-ary (like phonons). 
+ []
+
+<tb2.png, id=26, 593.21625pt x 328.22626pt>
+File: tb2.png Graphic file (type png)
+ <use tb2.png>
+Package pdftex.def Info: tb2.png used on input line 220.
+(pdftex.def)             Requested size: 345.0pt x 190.89221pt.
+ [4] [5 <./tb1.png> <./tb2.png>] <tb3.png, id=35, 788.9475pt x 250.9375pt>
+File: tb3.png Graphic file (type png)
+ <use tb3.png>
+Package pdftex.def Info: tb3.png used on input line 257.
+(pdftex.def)             Requested size: 345.0pt x 109.73126pt.
+ [6 <./tb3.png>] <tb4.png, id=40, 566.115pt x 411.5375pt>
+File: tb4.png Graphic file (type png)
+ <use tb4.png>
+Package pdftex.def Info: tb4.png used on input line 276.
+(pdftex.def)             Requested size: 345.0pt x 250.80516pt.
+ [7 <./tb4.png>]
+<tb5.png, id=46, 1048.91875pt x 318.18875pt>
+File: tb5.png Graphic file (type png)
+ <use tb5.png>
+Package pdftex.def Info: tb5.png used on input line 292.
+(pdftex.def)             Requested size: 345.0pt x 104.65303pt.
+ [8 <./tb5.png>]
 (./ss_final.aux) ) 
 Here is how much of TeX's memory you used:
- 12382 strings out of 492995
- 222759 string characters out of 6132704
+ 12402 strings out of 492995
+ 222975 string characters out of 6132704
  259900 words of memory out of 5000000
- 15872 multiletter control sequences out of 15000+600000
+ 15888 multiletter control sequences out of 15000+600000
  9988 words of font info for 36 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  42i,8n,40p,10384b,275s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1289,10 +1316,10 @@ r12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr1
 fb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pf
 b></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb>
 </usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on ss_final.pdf (5 pages, 244702 bytes).
+Output written on ss_final.pdf (8 pages, 491719 bytes).
 PDF statistics:
- 71 PDF objects out of 1000 (max. 8388607)
- 49 compressed objects within 1 object stream
+ 90 PDF objects out of 1000 (max. 8388607)
+ 57 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 6 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 26 words of extra memory for PDF output out of 10000 (max. 10000000)
 

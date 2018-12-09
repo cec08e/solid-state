@@ -199,5 +199,101 @@ $$
     \caption{Dispersion curve for tight-binding chain.}
 \end{figure}
 
+Some notes about the dispersion relation:
+\begin{itemize}
+  \item The periodicity is $k \rightarrow k + \frac{2\pi}{a}$ (like phonons).
+  \item Zero group velocity (flat curve) at the Brillouin zone boundary (like phonons).
+  \item Electrons may only have eigenstates within a certain \emph{band}, referring to both
+  the energy range in which the eigenstates exist as well as the individual branches
+  of the dispersion curve itself.
+  \item The \emph{bandwidth} refers to the difference between the maximum and minimum energies
+  in a band. In Fig. 1, the bandwidth is $4t$.
+  \item The bandwidth, $4t$, is dependent on the hopping amplitude and, therefore, on the
+  interatomic spacing between nuclei. This dependence is shown in Fig. 2.
+  \item As seen in Fig. 2, the effect of the hopping is to raise the energy of some eigenstates and lower the
+  energy of others (such that the average is still $\epsilon_{0}$). If the band is not completely filled, then
+  the average energy dips below $\epsilon_{0}$ since some higher states are not filled.
+\end{itemize}
 
+\begin{figure}
+  \centering
+    \includegraphics[width=\textwidth]{tb2}
+    \caption{Bandwidth dependence on interatomic spacing.}
+\end{figure}
+
+Near the bottom of the band in Fig. 1, where $k$ is close to zero, the dispersion is approximately parabolic. For
+small $k$, $cos(ka) \approx 1 - k^{2}a^{2}/2$, so
+
+$$
+E(k) \approx Constant + ta^{2}k^{2}
+$$
+
+\textbf{Note:} If the minimum were at the Brillouin zone edge, we would need to expand around $k = \pi/a$ instead.
+Since the dispersion of the free electron can be written as
+$$E_{free}(k) = \frac{\hbar^{2}k^{2}}{2m}$$
+We can relate the two dispersion relations to calculate an \emph{effective mass} $m^{*}$ such that the dispersion at
+the bottom of the band behaves as a free electron of mass $m^{*}$.
+$$
+\frac{\hbar^{2}k^{2}}{2m^{*}} = fa^{2}k^{2}
+$$
+and the effective mass is then
+$$
+m^{*} = \frac{\hbar^{2}}{2ta^{2}}
+$$
+
+\subsection{Band Filling}
+\subsubsection{Monovalent Case}
+If every atom in the one-dimensional, single-orbital tight binding model were to ``donate'' an electron,
+then we would have a total of $N$ electrons. These electrons occupy the $N$ lowest-energy states in the band,
+which has $N$ allowed eigenstates, but each eigenstate can be populated by a spin-up and a spin-down electron.
+The band is therefore only half filled, as seen in the left of Fig. 3.
+
+In Fig. 3, the Fermi surface (the energy level separating occupied and unoccupied states) is $\epsilon_{0}$. By providing a small bit of
+energy, the Fermi sea can be shifted slightly such that the electrons take on an average net positive momentum (right side of Fig. 3) and
+current is able to flow. For this reason, monovalent materials are frequently metals.
+
+\begin{figure}
+  \centering
+    \includegraphics[width=\textwidth]{tb3}
+    \caption{Monovalent Fermi surface and shifted Fermi sea.}
+\end{figure}
+
+\subsubsection{Divalent Case}
+In the divalent case, there are a total of $2N$ atoms, which fill all spin-up and spin-down states of each of the $N$ allowed
+eigenstates. That is, the band is completely filled. Therefore, there are no free $k$ states to which the Fermi sea could shift to allow a current to
+be induced. \textbf{A filled band carries no current}. This results in a \emph{band insulator}.
+
+\subsection{Multiple Bands}
+In the one-dimensional, single-orbital tight-binding model, there is a single band. However, if we consider multiple
+orbitals per unit cell, more bands will emerge. We may consider, for example:
+\begin{itemize}
+  \item Multi-atom unit cells with one or more orbitals each.
+  \item Single-site unit cells with multiple orbitals per site.
+\end{itemize}
+The energy bandwidth as a function of inter-atomic spacing is shown in Fig. 4 for the case where there are two orbitals per single-site.
+\begin{figure}
+  \centering
+    \includegraphics[width=\textwidth]{tb4}
+    \caption{Energy bandwidth as a function of inter-atomic distance. Two atomic orbitals per site.}
+\end{figure}
+The dispersion relation for the two-site, single orbital case is shown in Fig. 5. Some notes:
+\begin{itemize}
+  \item If both species are divalent, then there are already a total of two electrons filled each orbital on every atom - that is,
+  both branches of the dispersion are filled.
+  \item If both species are monovalent, then only the bottom band is filled (i.e. only half the states are filled). So, there are $k$
+  states available to shift the Fermi sea (around the Fermi surface, which is halfway between the top and bottom bands). However, to
+  shift the sea, we need to apply an electric field strong enough to overcome the energy gap between the bands. \textbf{A filled band
+  is an insulator as long as there is a finite gap to any higher-level band}.
+  \item As seen in Fig. 4, as the interatomic distance decreases, the bandwidths of the individual bands come to overlap and there is no
+  longer a gap between the lower- and higher-energy bands. In this limit, the material comes to behave as a metal.
+\end{itemize}
+\begin{figure}
+  \centering
+    \includegraphics[width=\textwidth]{tb5}
+    \caption{Dispersion relation for tight-binding model with two sites per unit cell, one orbital per site.}
+\end{figure}
+
+\section{Nearly Free Electron Model}
+
+To do: Chapters 15, 16, 23, 17
 \end{document}
