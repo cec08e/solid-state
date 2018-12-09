@@ -453,7 +453,7 @@ $$
 \subsection{Higher Dimensions}
 In two and three dimensions, we observe the following about the nearly free electron model:
 \begin{itemize}
-  \item Near the Brillouin zone boundary, a gap opens due to scattering by a reciprocal lattice vector.
+  \item Near the Brillouin zone boundary, a gap opens due to scattering by a reciprocal lattice vector. See Fig. 8.
   \item States of energy slightly higher than the zone boundary are pushed up, while states of energy slightly
   lower are pushed down.
   \item In the one-dimensional case, for $k$ on a zone boundary, there was exactly one $k'$ such that $k' = k + G$
@@ -461,6 +461,12 @@ In two and three dimensions, we observe the following about the nearly free elec
   to find the degenerate eigenstates. For example, in 2D, $(\pm \pi/a, \pm \pi/a)$ all have the same energy and are separated
   by reciprocal lattice vectors.
 \end{itemize}
+
+\begin{figure}
+  \centering
+    \includegraphics[width=\textwidth]{tb8}
+    \caption{Dispersion due to small perturbation in free-electron model.}
+\end{figure}
 
 \section{Bloch's Theorem}
 \begin{itemize}
@@ -480,7 +486,43 @@ In two and three dimensions, we observe the following about the nearly free elec
   which guarantees that $u_{\textbf{k}}^{\alpha}(\textbf{r}) = u_{\textbf{k}}^{\alpha}(\textbf{r} + \textbf{R})$.
   \item The modified plane wave can then be written as
   $$\Psi_{\textbf{k}}^{\alpha}(\textbf{r}) = \sum_{\textbf{G}} \tilde{u}_{\textbf{G},\textbf{k}}^{\alpha}(\textbf{r})e^{i(\textbf{G}+\textbf{k})\cdot\textbf{r}}$$
-  REVISIT TO FINISH.
+  \item The implication: \textbf{every eigenstate can be written as a sum of plane waves with differ by reciprocal lattice vectors}.
+  \item The reason for Bloch's theorem is that $\bra{\textbf{k}'}V\ket{\textbf{k}}$ is zero unless the Laue condition is fulfilled:
+  $$\textbf{k}' = \textbf{k} + \textbf{G}$$
+  \item The Schrodinger equation is block-diagonal in $\textbf{k}$ and only planewaves that differ by $\textbf{G}$ can be mixed together.
 \end{itemize}
-To do: Chapters 15, 16, 23, 17
+
+Conclusion: electrons in a periodic potential have eigenstates labeled by the crystal momenta. Even though the potential felt by the
+electron due to the atomic sites may be very strong, electrons still behave as if they do not see the atoms at all. They almost form
+plane-wave eigenstates - the only difference if that they are multiplied by a periodic Bloch function $u$ and are functions of the
+crystal momentum.
+
+\section{Insulator, Semiconductor, or Metal}
+\subsection{Energy Bands in One Dimension}
+\begin{itemize}
+  \item The number of permissible $k$-states in a single Brillouin zone is equal to the number of unit cells ($N$) in the system.
+  \item One electron per unit cell $\rightarrow$ 2 electrons fill each of the bottom $N/2$ states, so they band is half full. See Fig. 9.
+  \begin{figure}
+    \centering
+      \includegraphics[width=\textwidth]{tb9}
+      \caption{Band diagrams of monovalent 1-D monatomic chain with two orbitals per unit cell. The Fermi surface is shown as a dashed line. When
+      an electric field is applied, the Fermi sea shifts, inducing a current. }
+  \end{figure}
+  \item If two electrons are donated per unit cell, then the bottom band is completely filled. See Fig. 10.
+  \begin{figure}
+    \centering
+      \includegraphics[width=\textwidth]{tb10}
+      \caption{Band diagrams of divalent 1-D monatomic chain with two orbitals per unit cell. The Fermi surface (chemical potential)
+       is shown as a dashed line, within the band gap. On the left, a direct band gap is shown. On the right, a metal is shown - if the
+       higher energy band were to be lifted, an indirect band gap would be obtained.}
+  \end{figure}
+  \item The highest occupied band is known as the \emph{valence band}, while the lowest unoccupied band is the \emph{conduction band}.
+  \item In the case of a filled valence band, a sufficiently high electric field is required to excite electrons into the conduction band.
+  Below the required field strength, no movement occurs and the material acts as a \emph{band insulator}.
+  \item If the band gap is $< 4eV$, the material is known as a semiconductor since thermal excitations can push some electrons into the
+  conduction band at room temperature.
+  \item In the case of divalent 1-D monatomic chain, typically we obtain a band insulator, but we may obtain a metal as seen in the right of Fig. 10.
+\end{itemize}
+
+To do: Chapters 16, 23, 17
 \end{document}
