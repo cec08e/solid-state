@@ -294,6 +294,193 @@ The dispersion relation for the two-site, single orbital case is shown in Fig. 5
 \end{figure}
 
 \section{Nearly Free Electron Model}
+The difference between the nearly free electron model and the tight binding model:
+\begin{itemize}
+  \item In the nearly free electron model, electrons are considered as free electron waves that are only very
+  weakly perturbed by the periodic potential of the atoms in the solid.
+  \item In the tight binding model, electrons are considered very tightly bound to atoms with a possible weak
+  hopping to other atoms.
+\end{itemize}
+The nearly free electron model starts with the free electron case:
+\begin{itemize}
+  \item The free electron Hamiltonian is
+  $$
+     H_{0} = \frac{\textbf{p}^{2}}{2m}
+  $$
+  \item The eigenstates are the plane waves $\ket{\textbf{k}}$ with
+  eigenenergies
+  $$
+    \epsilon_{0}(\textbf{k}) = \frac{\hbar^{2}|\textbf{k}|^{2}}{2m}
+  $$
+\end{itemize}
+We now introduce a weak periodic potential $V(\textbf{r})$.
+\begin{itemize}
+  \item For any lattice vector $\textbf{R}$, $V(\textbf{r}) = V(\textbf{r} + \textbf{R})$.
+  \item The matrix elements of $V(\textbf{r})$ are given by
+  $$
+    V_{k',k} = \bra{\textbf{k}'}V\ket{\textbf{k}} = \frac{1}{L^{3}}\int d^{3}r \,e^{i(\textbf{k} - \textbf{k}')\cdot \textbf{r}}\,V(\textbf{r})
+    \equiv V_{\textbf{k}' - \textbf{k}}
+  $$
+  \item The integral in the previous point will vanish unless the Laue condition is met. Therefore,
+  $$
+    V_{k',k} =V_{\textbf{G}}\delta_{\textbf{G}, \textbf{k}' - \textbf{k}}
+  $$
+  In words, this means that a plane-wave state $\ket{\textbf{k}}$ can only scatter into another
+  plane-wave state $\ket{\textbf{k}'}$ if $\textbf{k}$ and $\textbf{k}'$ are separated by a
+  reciprocal lattice vector $\textbf{G}$ - this is conservation of crystal momentum.
+\end{itemize}
+We now apply perturbation theory. To second order, the shift in the eigenenergies due to the
+potential $V(\textbf{r})$ is given by
+\begin{equation}
+  \begin{aligned}
+  \epsilon(\textbf{k}) & = \epsilon_{0}(\textbf{k}) + \bra{\textbf{k}}V\ket{\textbf{k}} + \sum_{\textbf{k}' = \textbf{k} + \textbf{G}}\frac{|\bra{\textbf{k}'}V\ket{\textbf{k}}|^{2}}{\epsilon_{0}(\textbf{k}) - \epsilon_{0}(\textbf{k'})} \\
+  & = \epsilon_{0}(\textbf{k}) + V_{0} + \sum_{\textbf{k}' = \textbf{k} + \textbf{G}}\frac{|\bra{\textbf{k}'}V\ket{\textbf{k}}|^{2}}{\epsilon_{0}(\textbf{k}) - \epsilon_{0}(\textbf{k'})}
+\end{aligned}
+\end{equation}
+Some notes about this result:
+\begin{itemize}
+  \item We may assume that $V_{0} = 0$ for simplicity since this is just a constant shift in the energy spectrum.
+  \item The second-order sum is taken over all $\textbf{k}'$ for which $\textbf{G} \neq 0$.
+  \item In the degenerate situation, $\epsilon_{0}({\textbf{k}})$ and $\epsilon_{0}({\textbf{k}'})$ are approximately
+  equal and the sum will diverge. The conditions for this case are
+  $$
+     \epsilon_{0}(\textbf{k}) = \epsilon_{0}(\textbf{k}')
+  $$
+  $$
+  \textbf{k}' = \textbf{k} + \textbf{G}
+  $$
+  \item In one dimension, this is satisfied for $k' = -k = \frac{n\pi}{a}$ (i.e. on the Brillouin zone boundary).
+\end{itemize}
 
+\subsection{Degenerate Pertubation Theory}
+When two plane wave states $\ket{\textbf{k}}$ and $\ket{\textbf{k}'} = \ket{\textbf{k} + \textbf{G}}$ have approximately
+the same energy (i.e. they are close to the zone boundaries), then we need to diagonalize this subspace. We begin with
+
+$$
+\bra{\textbf{k}}H\ket{\textbf{k}} = \epsilon_{0}(\textbf{k})
+$$
+$$\bra{\textbf{k}'}H\ket{\textbf{k}'} = \epsilon_{0}(\textbf{k}') = \epsilon_{0}(\textbf{k} + \textbf{G})$$
+$$ \bra{\textbf{k}}H\ket{\textbf{k}'} = V_{\textbf{k} - \textbf{k}'} = V_{\textbf{G}}^{*}$$
+$$\bra{\textbf{k}'}H\ket{\textbf{k}} = V_{\textbf{k}' - \textbf{k}} = V_{\textbf{G}}$$
+We now write the diagonalized state as a linear combination of these plane-wave states.
+$$
+\ket{\Psi} = \alpha\ket{\textbf{k}} + \beta\ket{\textbf{k}'} = \alpha\ket{\textbf{k}} + \beta\ket{\textbf{k} + \textbf{G}}
+$$
+We obtain the Schrodinger equation
+$$
+\begin{bmatrix}
+  \epsilon_{0}(\textbf{k}) &  V_{\textbf{G}}^{*}\\
+   V_{\textbf{G}}& \epsilon_{0}(\textbf{k} + \textbf{G})
+\end{bmatrix}
+\begin{bmatrix}
+  \alpha \\
+  \beta
+\end{bmatrix}
+ = E \begin{bmatrix} \alpha \\ \beta\end{bmatrix}
+$$
+which yields the characteristic equation
+$$\left ( \epsilon_{0}(\textbf{k}) - E \right)\left (\epsilon_{0}(\textbf{k} + \textbf{G}) - E \right) - |V_{\textbf{G}}|^{2} = 0$$
+Two cases arise:
+\begin{itemize}
+  \item \emph{Case 1}: $\textbf{k}$ exactly at the zone boundary.
+    In this case, $\epsilon_{0}(\textbf{k}) = \epsilon_{0}(\textbf{k} + \textbf{G})$ and the characteristic equation
+    reduces to
+    $$\left ( \epsilon_{0}(\textbf{k}) - E \right)^{2} = |V_{\textbf{G}}|^{2} $$
+    which yields
+    $$E_{\pm} = \epsilon_{0}(\textbf{k})\pm|V_{\textbf{G}}|$$
+    A gap opens at the zone boundary - where once the energy was $\epsilon_{0}(\textbf{k})$, we now see two energies split by $2|V_{\textbf{G}}|$.
+
+    Consider $V(x) = V\cos(2\pi x/a)$.
+    \begin{itemize}
+      \item Brillouin zone boundaries are at $k = \pi/a$ and $k' = -k = -\pi/a$.
+      \item $k' - k = G = -2\pi/a$
+      \item $\epsilon_{0}(k') = \epsilon_{0}(k)$
+      \item The diagonalized states corresponding to $E_{\pm}$ are
+      $$\ket{\Psi_{\pm}} = \frac{1}{\sqrt{2}}\left ( \ket{k} \pm \ket{k'}\right )$$
+      where
+      $$\ket{k} = e^{ikx} = e^{ix\pi/a}$$
+      $$\ket{k'} = e^{ik'x} = e^{-ix\pi/a}$$
+      Therefore,
+      $$\ket{\Psi_{+}} \propto \cos(x\pi/a)$$
+      $$\ket{\Psi_{-}} \propto \sin(x\pi/a)$$
+    \end{itemize}
+    \item The periodic potential scatters between the two plane waves $\ket{\textbf{k}}$ and $\ket{\textbf{k} + \textbf{G}}$. If these two
+    plane waves have the same energy, they mix strongly to form two states: one with higher energy (concentrated on the potential maxima) and
+    one with lower energy (concentrated on the potential minima. See Fig. 6.
+
+    \begin{figure}
+      \centering
+        \includegraphics[width=\textwidth]{tb6}
+        \caption{Probability amplitudes of diagonalized states, plotted with potential in real-space.}
+    \end{figure}
+  \item \emph{Case 2}: $\textbf{k}$ near the zone boundary.
+  Consider a plane wave $k$ near the zone boundary such that $k = n\pi/a + \delta$. This wavevector  can scatter to
+  $k' = -n\pi/a + \delta$. Plugging these wavevectors into the free-energy solution gives unperturbed energies
+  $$\epsilon_{0}(k) = \epsilon_{0}(n\pi/a + \delta)) = \frac{\hbar^{2}}{2m}\left [ (n\pi/a)^{2} +2n\pi\delta/a + \delta^{2}\right]$$
+  $$\epsilon_{0}(k') = \epsilon_{0}(-n\pi/a + \delta) = \frac{\hbar^{2}}{2m}\left [(n\pi/a)^{2} -2n\pi\delta/a + \delta^{2} \right]$$
+  Plugging these into the characteristic equation yields
+  $$
+  \left (\frac{\hbar^{2}}{2m} \left [(n\pi/a)^{2} + \delta^{2} \right ] - E \right)^{2} = \left ( \frac{\hbar^{2}}{2m} 2n\pi\delta/a\right)^{2} + |V_{G}|^{2}
+  $$
+  From which we obtain
+  $$
+  E_{\pm} = \frac{\hbar^{2}((n\pi/a)^{2} + \delta^{2})}{2m} \pm \sqrt{\left (\frac{\hbar^{2}}{2m}2n\pi\delta/a \right )^{2} + |V_{G}|^{2}}
+  $$
+  If $\delta$ is small, then
+  $$
+  E_{\pm} \approx \frac{\hbar^{2}(n\pi/a)^{2}}{2m} \pm |V_{G}| + \frac{\hbar^{2}\delta^{2}}{2m}\left [ 1 \pm \frac{\hbar^{2}(n\pi/a)^{2}}{m}\frac{1}{|V_{G}|}\right]
+  $$
+\end{itemize}
+The result of both cases is that we conclude that in the presence of some periodic potential, a gap of size $2|V_{G}|$ opens at the zone boundary and near
+the zone boundary this gap is quadratic in $\delta$. See Fig. 7.
+\begin{figure}
+  \centering
+    \includegraphics[width=\textwidth]{tb7}
+    \caption{Dispersion due to small perturbation in free-electron model.}
+\end{figure}
+At the Brillouin zone boundaries, the dispersion is parabolic around the extrema of the bands. We can write
+$$
+E_{+}(G+\delta) = C_{+} + \frac{\hbar^{2}\delta^{2}}{2m^{*}_{+}}
+$$
+$$
+E_{-}(G+\delta) = C_{-} - \frac{\hbar^{2}\delta^{2}}{2m^{*}_{-}}
+$$
+which gives us the effective masses
+$$
+m^{*}_{\pm} = \frac{m}{\left |1 \pm \frac{\hbar^{2}(n\pi/a)^{2}}{m}\frac{1}{|V_{G}} \right |}
+$$
+
+\subsection{Higher Dimensions}
+In two and three dimensions, we observe the following about the nearly free electron model:
+\begin{itemize}
+  \item Near the Brillouin zone boundary, a gap opens due to scattering by a reciprocal lattice vector.
+  \item States of energy slightly higher than the zone boundary are pushed up, while states of energy slightly
+  lower are pushed down.
+  \item In the one-dimensional case, for $k$ on a zone boundary, there was exactly one $k'$ such that $k' = k + G$
+  and $\epsilon_{0(k) = \epsilon_{0}(k')}$. In higher dimensions, there may be multiple $k'$ that may need to be mixed
+  to find the degenerate eigenstates. For example, in 2D, $(\pm \pi/a, \pm \pi/a)$ all have the same energy and are separated
+  by reciprocal lattice vectors.
+\end{itemize}
+
+\section{Bloch's Theorem}
+\begin{itemize}
+  \item How do we know the plane-wave approach to electrons is valid since the periodic potential may be very strong (and
+  therefore, perturbation theory may not be valid)?
+  \item No matter how strong the periodic potential, as long as it is periodic, the crystal momentum is conserved.
+  \item  \textbf{Bloch's Theorem}: An electron in a periodic potential has eigenstates of the form
+  $$\Psi_{\textbf{k}}^{\alpha}(\textbf{r}) = e^{i\textbf{k}\cdot\textbf{r}}u_{\textbf{k}}^{\alpha}(\textbf{r})$$
+  where $u_{\textbf{k}}^{\alpha}$ is periodic in the unit cell and the crystal momentum $\textbf{k}$ can be chosen
+  within the first Brillouin zone.
+  \item There may be many states at each $\textbf{k}$ and these are indexed by $\alpha$.
+  \item The function $u$ is known as the \emph{Bloch function} and $\Psi$ is sometimes called the \emph{modified plane wave}.
+  \item Because $u$ is periodic in the unit cell, we can write
+  $$
+  u_{\textbf{k}}^{\alpha}(\textbf{r}) = \sum_{\textbf{G}} \tilde{u}_{\textbf{G},\textbf{k}}^{\alpha}(\textbf{r})e^{i\textbf{G}\cdot\textbf{r}}
+  $$
+  which guarantees that $u_{\textbf{k}}^{\alpha}(\textbf{r}) = u_{\textbf{k}}^{\alpha}(\textbf{r} + \textbf{R})$.
+  \item The modified plane wave can then be written as
+  $$\Psi_{\textbf{k}}^{\alpha}(\textbf{r}) = \sum_{\textbf{G}} \tilde{u}_{\textbf{G},\textbf{k}}^{\alpha}(\textbf{r})e^{i(\textbf{G}+\textbf{k})\cdot\textbf{r}}$$
+  REVISIT TO FINISH.
+\end{itemize}
 To do: Chapters 15, 16, 23, 17
 \end{document}
