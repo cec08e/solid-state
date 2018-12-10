@@ -524,5 +524,149 @@ crystal momentum.
   \item In the case of divalent 1-D monatomic chain, typically we obtain a band insulator, but we may obtain a metal as seen in the right of Fig. 10.
 \end{itemize}
 
+\subsection{Energy bands in Two, Three Dimensions}
+\begin{figure}
+  \centering
+    \includegraphics[width=\textwidth]{tb11}
+    \caption{Two-dimensional Fermi surface of a. free electrons b. weakly periodic potential. The Fermi sea area remains constant.}
+\end{figure}
+
+\subsubsection{Two Dimensions}
+Consider a square lattice of monovalent atoms, for which the Brillouin zone is also square.
+\begin{itemize}
+  \item One electron per atom $\rightarrow$ half-filled band.
+  \item In the absence of a potential, the free electron have a circular Fermi surface, which will be precisely half
+  the area of the Brillouin zone (Fig. 11 a).
+  \item As a weak periodic potential is added, gaps open at the zone boundaries $\rightarrow$ states close to the
+  boundary decrease in energy. These states become preferential and the Fermi surface deforms as shown in Fig. 11 b.
+\end{itemize}
+
+Consider now a square lattice of divalent atoms, for which the Brillouin zone is also square.
+\begin{itemize}
+  \item The free electron fermi surface is still circular, but now the area must be equal to the area of the Brillouin zone (Fig. 12 a).
+  \item As the periodic potential strength is increased, states within the first BZ are lowered in energy and states in the second BZ are raised
+  in energy.
+  \item In the case of a strong periodic potential, the entire lower band becomes filled and the Fermi surface deforms to Fig. 12 b. The behavior is
+  that of an insulator.
+  \item For intermediate strength, some states remain filled in the second band (see Fig 13.). This is equivalent to the 1D case shown in Fig 10b. The
+  behavior is that of a metal.
+\end{itemize}
+
+
+  \begin{figure}
+    \centering
+      \includegraphics[width=\textwidth]{tb12}
+      \caption{Two-dimensional Fermi surface of divalent square lattice a. free electron case b. strong periodic potential.}
+  \end{figure}
+
+
+\begin{figure}
+  \centering
+    \includegraphics[width=\textwidth]{tb13}
+    \caption{Two-dimensional Fermi surface of divalent square lattice with intermediate periodic potential.}
+\end{figure}
+
+
+
+\subsection{Three Dimensions}
+Consider a 3D material of movalent atoms.
+\begin{itemize}
+  \item In the case of a nearly free electron metal (e.g. Potassium), the Fermi surface is almost a perfect sphere of exactly
+  half the volume of the Brillouin zone.
+  \item As the periodic potential gets stronger, the sphere deforms but maintains the same volume.
+  \item Copper, with a very strong periodic potential, is shown in Fig. 12.
+
+
+  \begin{figure}
+    \centering
+      \includegraphics[width=\textwidth]{tb14}
+      \caption{Three-dimensional Fermi surface of monovalent Copper, fcc with a strong periodic potential.}
+  \end{figure}
+\end{itemize}
+
+
+\subsection{Tight Binding}
+\begin{itemize}
+  \item In the tight binding model, we imagine a number of orbitals on each atom (or in a unit cell) and allow them to weakly
+  hop to other orbitals. This spreads the eigen-energies of the atomic orbitals out into bands.
+  \item The one-, two-  dimensional Hamiltonians of the tight-binding model are given by
+  \begin{equation}
+    H_{nm} = \epsilon_{0}\delta_{nm} - t(\delta_{n+1,m} - \delta_{n-1,m})
+  \end{equation}
+  \begin{equation}
+    \begin{aligned}
+    H_{nm} & = \epsilon_{0}\delta_{n_{x}m_{x}}\delta_{n_{y}m_{y}} - t(\delta_{n_{x}+1, m_{x}}\delta_{n_{y}m_{y}} + \delta_{n_{x}m_{x}}\delta_{n_{y}+1, m_{y}} \\
+    & - \delta_{n_{x}-1, m_{x}}\delta_{n_{y}m_{y}} - \delta_{n_{x}m_{x}}\delta_{n_{y}-1, m_{y}})
+  \end{aligned}
+  \end{equation}
+  \item The 2D solution is
+  $$
+  E(k) = \epsilon_{0} - 2t\cos(k_{x}a)-2t\cos(k_{y} a)
+  $$
+  \item Increasing the number of orbitals increases the accuracy of the solution.
+  \item If the unit cell is divalent, it is important to determine whether bands overlap. If atomic orbitals are sufficiently far
+  apart in energy, small hopping between atoms cannot spread the bands enough to make them overlap.
+  \item In the free electron picture, the gap is proportional to $|V_{G}|$ - the limit of strong periodic potential guarantees
+  that the bands do not overlap.
+\end{itemize}
+
+\subsection{Failures of Band Representation}
+\begin{itemize}
+  \item We have developed a picture now where the structure and filling of bands determines their properties: insulator, conductor, or semiconductor.
+  \item One important effect has been neglected: Coulomb repulsion between electrons, which can be on the order of several eV.
+  \item It is justifiable to neglect this interaction, but there are cases where the non-interacting picture fails.
+  \item \emph{Magnets}: In ferromagnetism, spins spontaneously align due to interaction effects. Aligning all spins can lower the Coulomb energy between
+  electrons and therefore may be more favorable than filling lowest-energy $k$-states with both spin states.
+  \item \emph{Mott insulators}: when the coulomb interaction is so strong, that there is a huge penalty to electrons sitting at the same atom site (even
+  if they have different spins). The result is a single electron per site, and the inability for electrons to move from site to site (like a traffic jam).
+\end{itemize}
+
+\subsection{Band Structure and Optical Properties}
+\subsubsection{Optical Properties of Insulators and Semiconductors}
+\begin{itemize}
+  \item Band insulators cannot absorb photons with energies less than the band-gap energy $\rightarrow$ low-energy photons create no excitations, they just pass through.
+  For example, GaAs does not absorb wavelengths $>.9$ microns (~$1.45 eV$).
+  \item If an insulator or wide-band-gap semiconductor has a band gap greater than $3.2eV$, it will appear completely transparent since it cannot absorb
+  any wavelength of visible light. See Fig. 15.
+  \item Semiconductors with smaller bandgaps may only absorb higher energy photons. For example, CdS has a bandgap of $~2.6 eV$ and absorbs
+  violet and blue light. As a result, it looks reddish.
+  \item Semiconductors with very small bandgaps look black since they absorb all visible light frequencies (e.g. GaAs has a bandgap of ~$1.45 eV$).
+\end{itemize}
+\begin{figure}
+  \centering
+    \includegraphics[width=\textwidth]{tb15}
+    \caption{Energy spectrum of visible light.}
+\end{figure}
+
+\subsubsection{Direct and Indirect Transitions}
+\begin{itemize}
+  \item The band gap size determines the \emph{minimum} energy excitation which must be made in an insulator or semiconductor.
+  \item It also matter at which values of $\textbf{k}$ these maximum (valence) and minimum (conduction) energies lie.
+  \item \textbf{Direct band gap}: Maximum energy of valence band aligns with minimum energy of conduction band. That is, they have the same
+  $\textbf{k}$ value. See Fig 10 a.
+  \item \textbf{Indirect band gap}: The values of $\textbf{k}$ differ. See Fig 10 b, but imagine that there is a band gap between the bands. In this case,
+  the valence band max is at the zone boundary and the conduction band min is at $k = 0$.
+  \item Both types of gaps can be present. See Fig. 16.
+  \item Indirect band gap transitions are difficult to experience with exposure to light. If a photon is absorbed, both energy and momentum are absorbed. Given
+  an energy $E$ in the $eV$ range, the photon momentum $\hbar|k| = E/c$ is very small.
+\end{itemize}
+
+\begin{figure}
+  \centering
+    \includegraphics[width=\textwidth]{tb16}
+    \caption{Direct and indirect band gaps. While the indirect transition is lower energy, it is hard for a photon to excite an
+    electron across an indirect band gap because photons carry very little momentum (since the speed of light, c, is large)}
+\end{figure}
+
+\subsubsection{Optical Properties of Metals}
+\begin{itemize}
+  \item Since metals are very conductive, photons easily excite electrons which then re-emit light $\rightarrow$ metals look shiny.
+  \item Silver looks brighter than gold or copper because, even though all are monovalent, the energy width of silver's conduction
+  band is greater (i.e. $t$ is large for silver) so higher-energy electronic transitions are much more possible.
+  \item Copper and gold do not absorb blue and violet well (and therefore not re-emitted frequently). For silver, all visible colors and re-emitted well.
+\end{itemize}
+
+\subsection{Important Conclusions and Summary}
+
 To do: Chapters 16, 23, 17
 \end{document}

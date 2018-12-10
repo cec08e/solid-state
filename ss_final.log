@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  9 DEC 2018 18:50
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  10 DEC 2018 11:23
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1324,36 +1324,73 @@ File: tb10.png Graphic file (type png)
 Package pdftex.def Info: tb10.png used on input line 514.
 (pdftex.def)             Requested size: 345.0pt x 122.73404pt.
 
-[16 <./tb9.png> <./tb10.png>] [17] (./ss_final.aux) ) 
+[16 <./tb9.png> <./tb10.png>] <tb11.png, id=90, 571.13374pt x 249.93375pt>
+File: tb11.png Graphic file (type png)
+
+<use tb11.png>
+Package pdftex.def Info: tb11.png used on input line 530.
+(pdftex.def)             Requested size: 345.0pt x 150.97583pt.
+ [17 <./tb11.png>] <tb12.png, id=95, 574.145pt x 298.11375pt>
+File: tb12.png Graphic file (type png)
+
+<use tb12.png>
+Package pdftex.def Info: tb12.png used on input line 558.
+(pdftex.def)             Requested size: 345.0pt x 179.138pt.
+ <tb13.png, id=96, 602.25pt x 302.12875pt>
+File: tb13.png Graphic file (type png)
+ <use tb13.png>
+Package pdftex.def Info: tb13.png used on input line 565.
+(pdftex.def)             Requested size: 345.0pt x 173.08186pt.
+
+<tb14.png, id=97, 298.11375pt x 264.99pt>
+File: tb14.png Graphic file (type png)
+ <use tb14.png>
+Package pdftex.def Info: tb14.png used on input line 582.
+(pdftex.def)             Requested size: 345.0pt x 306.68506pt.
+ [18 <./tb12.png>]
+[19 <./tb13.png>] [20 <./tb14.png>]
+<tb15.png, id=111, 663.47874pt x 226.8475pt>
+File: tb15.png Graphic file (type png)
+ <use tb15.png>
+Package pdftex.def Info: tb15.png used on input line 637.
+(pdftex.def)             Requested size: 345.0pt x 117.9579pt.
+ [21]
+<tb16.png, id=115, 343.2825pt x 324.21124pt>
+File: tb16.png Graphic file (type png)
+ <use tb16.png>
+Package pdftex.def Info: tb16.png used on input line 656.
+(pdftex.def)             Requested size: 345.0pt x 325.83308pt.
+ [22 <./tb15.png>]
+[23 <./tb16.png>] (./ss_final.aux) ) 
 Here is how much of TeX's memory you used:
- 12427 strings out of 492995
- 223250 string characters out of 6132704
+ 12457 strings out of 492995
+ 223604 string characters out of 6132704
  260900 words of memory out of 5000000
- 15908 multiletter control sequences out of 15000+600000
+ 15932 multiletter control sequences out of 15000+600000
  9988 words of font info for 36 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  42i,12n,40p,10384b,336s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2017/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2017/te
-xmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2017/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb></usr/local/texlive/2017/texmf
--dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2017/texmf-
-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2017/texmf-d
-ist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2017/texmf-dis
-t/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2017/texmf-dist/
-fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2017/texmf-dist/fo
-nts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2017/texmf-dist/font
-s/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2017/texmf-dist/fonts/
-type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2017/texmf-dist/fonts/typ
-e1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/
-public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/p
-ublic/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/pub
-lic/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/publi
-c/amsfonts/cm/cmti10.pfb>
-Output written on ss_final.pdf (17 pages, 1502883 bytes).
+</usr/local/texlive/2017/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2017/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2017/texmf-dist/fonts/typ
+e1/public/amsfonts/cm/cmbx7.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmr10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/
+amsfonts/cm/cmr12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmr17.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsf
+onts/cm/cmr5.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmr7.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmsy10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm
+/cmsy5.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/c
+msy7.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmt
+i10.pfb>
+Output written on ss_final.pdf (23 pages, 1675437 bytes).
 PDF statistics:
- 144 PDF objects out of 1000 (max. 8388607)
- 88 compressed objects within 1 object stream
+ 176 PDF objects out of 1000 (max. 8388607)
+ 101 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 51 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 81 words of extra memory for PDF output out of 10000 (max. 10000000)
 
