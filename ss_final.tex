@@ -679,7 +679,35 @@ Consider a 3D material of movalent atoms.
   optical transitions over an indirect band gap are weak.
 \end{itemize}
 
-\section{Semiconductor Physics }
+\section{Semiconductor Physics}
+\subsection{Electrons and Holes}
+\begin{itemize}
+  \item Suppose we start with an insulator or semiconductor and excite one electron from the valence to the conduction band (See Fig. 17).
+  \item The absence of the electron in the valence band is known as a \emph{hole}.
+  \item While the electrical charge of an electron is negative, the electrical charge of a hole is equal and opposite.
+\end{itemize}
+
+\begin{figure}
+  \centering
+    \includegraphics[width=\textwidth]{tb17}
+    \caption{Electrons and holes in a semiconductor.}
+\end{figure}
+
+\subsubsection{Effective Mass of Electrons}
+It is useful to describe the curvature at the bottom of the band in terms of an effective mass.
+\begin{itemize}
+  \item Assume that near the bottom of the conduction band (at $\textbf{k} = \textbf{k}_{min}$), the energy is given by
+  $$
+  E = E_{min} + \alpha|\textbf{k} - \textbf{k}_{min}|^{2} + ...
+  $$
+  \item The effective mass is given by
+  $$
+  \frac{\hbar^{2}}{m^{*}} = \frac{\partial^{2}E}{\partial k^{2}} = 2\alpha
+  $$
+  \item The group velocity is given by
+  $$\textbf{v} = \frac{\nabla_{\textbf{k}}E}{\hbar} = \frac{\hbar(\textbf{k})}{m^{*}}$$
+\end{itemize}
+
 
 \section{Magnetism From Interactions: The Hubbard Model}
 \begin{itemize}
@@ -769,7 +797,42 @@ K & = \int_{0}^{E_{F} + \delta \epsilon/2} dE\; E \frac{g(E)}{2} + \int_{0}^{E_{
 & = K_{M=0} + \frac{g(E_{F})}{2}\left (\frac{M}{\mu_{B}g(E_{F})}\right)^{2}
 \end{aligned}
 \end{equation}
-
 \end{itemize}
-To do: Chapters  23, 17
+The total energy expectation value per unit volume is then
+$$
+E_{tot} = E_{M=0} + \left ( \frac{M}{\mu_{B}}\right)^{2}\left [ \frac{1}{2g(E_{F})} - \frac{vU}{4}\right]
+$$
+where $$E_{M=0} = K_{M=0} + \frac{V}{v}\frac{U}{4}x^{2}$$. From this we obtain the \textbf{Stoner Criterion}: for $U > 2/(g(E_{F})v)$, the
+system energy is lowered by increasing the magnetization from zero.
+
+\subsection{Mott Antiferromagnetism}
+\begin{itemize}
+\item Consider a system with doping $x = N$ - there is one electron per site.
+\item When $U = 0$, we have a conductor. But when $U$ is large, we have an insulator.
+\item In the absence of an external field, how do the spins align? Ferro- or antiferro-magnetically?
+The answer is antiferromagnetically.
+\item Consider a system with one electron per site, denoted $\ket{GS_{0}}$, which has energy $E(\ket{GS_{0}})$ in
+the absence of hopping.
+\item Now we add a weak hopping perturbation:
+$$
+ E = E(\ket{GS_{0}}) + \sum_{X}\frac{|\bra{X}H_{hop}\ket{GS_{0}}|^{2}}{E_{GS_0} - E_{X}} = E(\ket{GS_{0}}) - \frac{Nz|t|^{2}}{U}
+$$
+where $\ket{X}$ represents any state that can be reached by a single hop (there are $Nz$ such terms).
+\item If the states were aligned ferromagnetically, no such states $\ket{X}$ could exist due to Pauli exclusion. Therefore,
+antiferromagnetic configurations are preferred when hopping is allowed is the large  $U$ limit of the Mott insulating phase.
+\item Allowing an electron wavefunction to spread out always lowers its energy.
+\end{itemize}
+
+\subsection{Summary}
+\begin{itemize}
+  \item Hubbard model includes tight-binding hopping $t$ and on-site "Hubbard" interaction U.
+  \item For a partially filled band, the repulsive interaction, when strong enough, makes the system
+  an itinerant ferromagnet. Aligned spins can have lower energy because they do not double occupy sites.
+  This lowers the energy with respect to U, although it increases the kinetic energy.
+  \item For a half-filled band, the repulsive interaction makes the Mott insulator anti-ferromagnetic: virtual
+  hopping lowers the energy of anti-aligned neighboring spins.
+\end{itemize}
+
+
+To do: Chapters 17
 \end{document}
