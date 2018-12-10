@@ -667,6 +667,109 @@ Consider a 3D material of movalent atoms.
 \end{itemize}
 
 \subsection{Important Conclusions and Summary}
+\begin{itemize}
+  \item A material which allows for low-energy excitations is a metal. This happens when at least one band is partially filled.
+  \item Band insulators and semi-conductors have only filled bands and empty bands, separated by band gaps.
+  \item A semi-conductor is a band insulator with a small band gap.
+  \item The valence of a material determines how many carriers populate a band, or a collection of bands if the bands overlap.
+  \item The gap between bands is determined by the strength of the periodic potential. If the periodic potential is strong enough, the
+  atomic limit emerges in the tight binding model, and the bands will not overlap.
+  \item The band picture fails to account for electron-electron interactions and therefore fails to address Magnetism and Mott insulators.
+  \item Optical properties are dependent on the energies of electronic transitions. Photons can contribute to low-momentum transitions only, so
+  optical transitions over an indirect band gap are weak.
+\end{itemize}
 
-To do: Chapters 16, 23, 17
+\section{Semiconductor Physics }
+
+\section{Magnetism From Interactions: The Hubbard Model}
+\begin{itemize}
+  \item \textbf{Itinerant ferromagnetism}: the spin sites are capable of wandering freely - e.g. a free electron gas.
+  \item For free electrons, it is always lower energy to have equal number of up/down spins $\rightarrow$ result of strong Coulomb interactions
+  between electrons.
+  \item The \textbf{Hubbard model} attempts to understand magnetism arising from e-e interactions.
+\end{itemize}
+The Hubbard model is characterized by the following:
+\begin{itemize}
+  \item We begin with a tight-binding model with hopping parameter $t$ in $d$ dimensions. The Hamiltonian will
+  be denoted $H_{0}$.
+  \item The full bandwidth of the band is $4dt$ in $d$ dimensions.
+  \item We refer to the number of electrons in the band per site, $x$, as the doping. Since there are $2$ spin states,
+  then $x/d$ is the fraction of $k$-states that are filled in the band.
+  \item The Hubbard interaction is
+  $$
+  H_{interaction} = \sum_{i}U n_{i\uparrow}n_{i\downarrow}
+  $$
+  where $n_{i\uparrow/\downarrow}$ is the number of spin up/down electrons on site $i$ and $U > 0$ is known as the repulsive Hubbard
+  interaction energy, giving an energy penalty whenever two electrons sit on the same lattice site.
+  \item The full Hamiltonian is
+  $$H = H_{0} + H_{interaction}$$
+\end{itemize}
+
+\subsection{Itinerant Ferromagnetism}
+There is competition between the potential and kinetic energy as to whether ferromagnetic states develop.
+\begin{itemize}
+  \item The Fermi energy is lowered by placing electrons (one spin-up, one spin-down) in the lowest $k$-states.
+  \item But the Hubbard energy is lowered by aligning all electrons - in which case the Pauli exclusion principle forces them
+  to be positioned on different lattice sites.
+\end{itemize}
+
+\subsubsection{Mean Field Approach}
+Goal: decide quantitatively whether spins will align or not. We begin with
+$$
+U_{n_{i\uparrow}n_{i\downarrow}} = \frac{U}{4}(n_{i\uparrow} + n_{i\downarrow})^{2} - \frac{U}{4}(n_{i\uparrow} - n_{i\downarrow})^{2}
+$$
+Now, we introduce operators
+$$
+U_{n_{i\uparrow}n_{i\downarrow}} \approx \frac{U}{4} \left < n_{i\uparrow} + n_{i\downarrow}\right >^{2} - \frac{U}{4}\left <n_{i\uparrow} - n_{i\downarrow}\right >^{2}
+$$
+where
+$$
+\left < n_{i\uparrow} + n_{i\downarrow}\right > = x
+$$
+and
+$$
+M = \frac{\mu_{B}}{v}\left <n_{i\uparrow} - n_{i\downarrow}\right >
+$$
+where $v$ is the unit cell volume. Therefore,
+$$
+\left < H_{interaction}\right > \approx \frac{V}{v}\frac{U}{4}(x^{2} - (Mv/\mu_{b})^{2})
+$$
+where $V/v$ is the number of unit cells. Important conclusions:
+\begin{itemize}
+  \item Increasing the magnetization $M$ decreases the expectation value of the interaction energy.
+  \item To determine whether spins polarize, we need to compare this energy against the effect on the kinetic energy.
+\end{itemize}
+
+\subsubsection{Stoner Criterion}
+\begin{itemize}
+\item Consider a system (at $T = 0$) with the same number of spin-up and spin-down electrons.
+\item Let $g(E_{F})$ be the total density of states at the Fermi surface per unit volume (for both spins together).
+\item Flip a small number of spins such that the spin-up and spin-down Fermi surfaces become different:
+$$ E_{F,\uparrow} = E_{F} + \delta\epsilon/2$$
+$$ E_{F,\downarrow} = E_{F} - \delta\epsilon/2$$
+\item The difference in the number density is then
+$$
+  \rho_{\uparrow} - \rho_{\downarrow} = \int_{0}^{E_{F} + \delta\epsilon/2} dE \frac{g(E)}{2}  - \int_{0}^{E_{F} - \delta\epsilon/2} dE \frac{g(E)}{2}
+$$
+For very small $\delta\epsilon$,
+$$
+\rho_{\uparrow} - \rho_{\downarrow} = \delta \epsilon \frac{g(E_{F})}{2}
+$$
+Therefore,
+$$
+  M = \mu_{B}(\rho_{\downarrow} - \rho_{\uparrow}) = -\mu_{B}\delta \epsilon \frac{g(E_{F})}{2}
+$$
+\item The kinetic energy can be written
+\begin{equation}
+\begin{aligned}
+K & = \int_{0}^{E_{F} + \delta \epsilon/2} dE\; E \frac{g(E)}{2} + \int_{0}^{E_{F} - \delta \epsilon/2} dE \;E \frac{g(E)}{2} \\
+& = 2 \int_{0}^{E_{F}} dE \; E\frac{g(E)}{2} + \int_{E_{F}}^{E_{F} + \delta \epsilon/2} dE\; E \frac{g(E)}{2} + \int_{E_{F}}^{E_{F} - \delta \epsilon/2} dE \;E \frac{g(E)}{2} \\
+& \approx K_{M=0} + \frac{g(E_{F})}{2}\left [ \left ( \frac{(E_{F} + \delta \epsilon/2)^{2}}{2} - \frac{E_{F}^{2}}{2}\right) + \left ( \frac{(E_{F} - \delta \epsilon/2)^{2}}{2} - \frac{E_{F}^{2}}{2}\right)\right] \\
+& = K_{M=0} + \frac{g(E_{F})}{2}(\delta \epsilon/2)^{2} \\
+& = K_{M=0} + \frac{g(E_{F})}{2}\left (\frac{M}{\mu_{B}g(E_{F})}\right)^{2}
+\end{aligned}
+\end{equation}
+
+\end{itemize}
+To do: Chapters  23, 17
 \end{document}
