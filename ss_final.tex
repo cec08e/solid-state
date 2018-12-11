@@ -702,10 +702,45 @@ It is useful to describe the curvature at the bottom of the band in terms of an 
   $$
   \item The effective mass is given by
   $$
-  \frac{\hbar^{2}}{m^{*}} = \frac{\partial^{2}E}{\partial k^{2}} = 2\alpha
+  \frac{\hbar^{2}}{m^{*}} \equiv \frac{\partial^{2}E}{\partial k^{2}} = 2\alpha
   $$
   \item The group velocity is given by
-  $$\textbf{v} = \frac{\nabla_{\textbf{k}}E}{\hbar} = \frac{\hbar(\textbf{k})}{m^{*}}$$
+  $$\textbf{v} = \frac{\nabla_{\textbf{k}}E}{\hbar} = \frac{\hbar(\textbf{k}-\textbf{k}_{min })}{m^{*}}$$
+  \item This definition is chosen to be in analogy with the free electron behavior:
+  $$
+    E = \frac{\hbar^{2}|\textbf{k}|^{2}}{2m}
+  $$
+  $$
+  \textbf{v} = \frac{\nabla_{\textbf{k}}E}{\hbar} = \frac{\hbar \textbf{k}}{m}
+  $$
+\end{itemize}
+
+\subsubsection{Effective Mass of Holes}
+  \begin{itemize}
+    \item At the top of the valence band (at $\textbf{k} = \textbf{k}_{max}$), the energy is given by ($\alpha > 0$)
+    $$
+    E = E_{max} - \alpha|\textbf{k} - \textbf{k}_{max}|^{2} + ...
+    $$
+    \item Conventionally, the effective mass for holes at the top of the valence band is always positive.
+    $$
+    \frac{\hbar^{2}}{m^{*}_{hole}} \equiv -\frac{\partial^{2}E}{\partial k^{2}} = 2\alpha
+    $$
+    \item The energy needed to boost the hole from $\textbf{k}_{max}$ to $\textbf{k}$ as shown in Fig 17 is given by
+    $$
+      E_{hole} = const + \frac{\hbar^{2}|\textbf{k} - \textbf{k}_{max}|^{2}}{2m^{*}_{hole}}
+    $$
+    \item \textbf{Boosting a hole to a lower energy costs energy}. Analogy: like pushing a balloon underwater. \textbf{
+    The lowest energy configuration is with electrons at the lowest energy, and holes at the highest energy.
+    }
+    \item Remember:
+    \begin{equation}
+      E(\text{absence of electron is state \textbf{k}}) = -E(\text{electron in state \textbf{k}})
+    \end{equation}
+\end{itemize}
+
+\subsubsection{Momentum and velocity of a hole}
+\begin{itemize}
+  \item An electron added to a band in state \textbf{k} increases the crystal momentum by $\hbar\textbf{k}$
 \end{itemize}
 
 
@@ -833,6 +868,40 @@ antiferromagnetic configurations are preferred when hopping is allowed is the la
   hopping lowers the energy of anti-aligned neighboring spins.
 \end{itemize}
 
+\section{Peierl's Transition}
+\begin{itemize}
+  \item Peierls' theorem states that a one-dimensional equally spaced chain with one electron per ion is unstable.
+  \item Simple model of the potential for an electron in a 1-D crystal with lattice spacing $a$.
+  \item The periodicity of the crystal creates energy band gaps in the dispersion diagram at the edge of the Brillouin zone $k = \pm \pi/a$ (See Fig.).
+  \item If the ions each contribute one electron, then the band will be half-filled, up to values of $k = \pm \pi/2a$.
+  \item Imagine a lattice distortion where every other ion moves closer to one neighbor and further away from the other, the unfavourable energy of the long bond between ions is outweighed by the energy gain of the short bond.
+  \item The period doubles from $a$ to $2a$, introducing new band gaps located at multiples of $k = \pm \pi/2a$ (See Fig).
+  \item Approaching $k = \pm \pi/2a$,  the distortion due to the introduction of the new band gap will cause the electrons to be at a lower energy than they would be in the perfect crystal.
+  \item Therefore, this lattice distortion becomes energetically favorable when the energy savings due to the new band gaps outweighs the elastic energy cost of rearranging the ions.
+
+\begin{figure}
+  \centering
+    \includegraphics[width=\textwidth]{p1}
+    \caption{Dispersion relation of undistored chain. Band gaps are observed at Brillouin zone edge.}
+\end{figure}
+
+\begin{figure}
+  \centering
+    \includegraphics[width=\textwidth]{p2}
+    \caption{Distorted chain.}
+\end{figure}
+
+\begin{figure}
+  \centering
+    \includegraphics[width=\textwidth]{p3}
+    \caption{Dispersion relation of distored chain. Band gaps are added at $k = \pm \pi/2a$.}
+\end{figure}
+
+\end{itemize}
+
+The \emph{Jahn–Teller} effect, sometimes also known as Jahn–Teller distortion, describes the geometrical distortion of molecules and ions that is associated with certain electron configurations.
+The Jahn–Teller theorem essentially states that any nonlinear molecule with a spatially degenerate electronic ground state will undergo a geometrical distortion that removes that degeneracy,
+because the distortion lowers the overall energy of the species. 
 
 To do: Chapters 17
 \end{document}

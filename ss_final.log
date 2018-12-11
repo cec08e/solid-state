@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  10 DEC 2018 14:49
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  11 DEC 2018 06:32
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1361,41 +1361,64 @@ File: tb16.png Graphic file (type png)
 Package pdftex.def Info: tb16.png used on input line 656.
 (pdftex.def)             Requested size: 345.0pt x 325.83308pt.
  [22 <./tb15.png>]
-[23 <./tb16.png>] [24] [25]
-Overfull \hbox (2.38322pt too wide) detected at line 771
+[23 <./tb16.png>] <tb17.png, id=124, 735.74875pt x 461.725pt>
+File: tb17.png Graphic file (type png)
+ <use tb17.png>
+Package pdftex.def Info: tb17.png used on input line 692.
+(pdftex.def)             Requested size: 345.0pt x 216.51056pt.
+
+[24] [25 <./tb17.png>] [26]
+Overfull \hbox (2.38322pt too wide) detected at line 834
 [][]
  []
 
-[26] [27] (./ss_final.aux) ) 
+[27] [28] <p1.png, id=142, 370.0224pt x 234.29935pt>
+File: p1.png Graphic file (type png)
+ <use p1.png>
+Package pdftex.def Info: p1.png used on input line 884.
+(pdftex.def)             Requested size: 345.0pt x 218.46457pt.
+
+<p2.png, id=143, 640.3122pt x 160.38658pt>
+File: p2.png Graphic file (type png)
+ <use p2.png>
+Package pdftex.def Info: p2.png used on input line 890.
+(pdftex.def)             Requested size: 345.0pt x 86.419pt.
+
+<p3.png, id=144, 3764.0625pt x 2383.90625pt>
+File: p3.png Graphic file (type png)
+ <use p3.png>
+Package pdftex.def Info: p3.png used on input line 896.
+(pdftex.def)             Requested size: 345.0pt x 218.47086pt.
+ [29] [30 <./p1.png> <./p2.png>] [31 <./p3.png>] (./ss_final.aux) ) 
 Here is how much of TeX's memory you used:
- 12457 strings out of 492995
- 223604 string characters out of 6132704
+ 12477 strings out of 492995
+ 223810 string characters out of 6132704
  260900 words of memory out of 5000000
- 15932 multiletter control sequences out of 15000+600000
+ 15948 multiletter control sequences out of 15000+600000
  9988 words of font info for 36 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  42i,12n,40p,10384b,336s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2017/texmf-dist/fonts/type1/pub
-lic/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/publ
-ic/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/publi
-c/amsfonts/cm/cmbx7.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/
-amsfonts/cm/cmex10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/a
-msfonts/cm/cmmi10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/am
-sfonts/cm/cmmi5.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsf
-onts/cm/cmmi7.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfon
-ts/cm/cmr10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts
-/cm/cmr12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/c
-m/cmr17.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/
-cmr5.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr
-7.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10
-.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.p
-fb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb
-></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-
-Output written on ss_final.pdf (27 pages, 1690466 bytes).
+</usr/local/
+texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/t
+exlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/te
+xlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb></usr/local/texl
+ive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texli
+ve/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texliv
+e/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/
+2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/20
+17/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2017
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2017/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2017/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2017/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2017/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2017/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2017/texmf-dist/f
+onts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2017/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmti10.pfb>
+Output written on ss_final.pdf (31 pages, 2424622 bytes).
 PDF statistics:
- 189 PDF objects out of 1000 (max. 8388607)
- 110 compressed objects within 2 object streams
+ 208 PDF objects out of 1000 (max. 8388607)
+ 119 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 81 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 101 words of extra memory for PDF output out of 10000 (max. 10000000)
 
